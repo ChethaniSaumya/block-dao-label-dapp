@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(\\d+)",
+      "destination": "/api/metadata?tokenId=$1"
+    },
+    {
+      "source": "/api/(\\d+)/view",
+      "destination": "/api.html"
+    },
+    {
+      "source": "/api/tokens",
+      "destination": "/api.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
