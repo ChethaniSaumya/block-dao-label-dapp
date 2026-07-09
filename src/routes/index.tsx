@@ -304,7 +304,7 @@ function Home() {
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
-              icon: Shield,
+              icon: ShieldCheck,
               step: 1,
               title: "Verification",
               desc: "Complete the manual off-chain verification process.",
