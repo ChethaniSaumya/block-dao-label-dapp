@@ -152,7 +152,10 @@ function Dashboard() {
     query: { enabled: enabled && !!ADDR.token, refetchInterval: 15_000 },
   });
 
-
+  const { data: bnbBalance, refetch: refetchBnb } = useBalance({
+    address,
+    query: { enabled, refetchInterval: 15_000 },
+  });
   const stats = [
     {
       icon: Wallet,
