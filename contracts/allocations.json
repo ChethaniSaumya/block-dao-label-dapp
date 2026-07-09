@@ -1,0 +1,10 @@
+{
+  "allocations": [
+    { "name": "FanDAO", "address": "0x1111111111111111111111111111111111111111", "amountWhole": "2500000000" },
+    { "name": "CreatorDAO", "address": "0x2222222222222222222222222222222222222222", "amountWhole": "2500000000" },
+    { "name": "Marketing", "address": "0x3333333333333333333333333333333333333333", "amountWhole": "1500000000" },
+    { "name": "Governance", "address": "0x4444444444444444444444444444444444444444", "amountWhole": "1000000000" },
+    { "name": "Ecosystem", "address": "0x5555555555555555555555555555555555555555", "amountWhole": "1000000000" },
+    { "name": "EarlyParticipants", "address": "0x6666666666666666666666666666666666666666", "amountWhole": "500000000" }
+  ]
+}
