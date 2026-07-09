@@ -1,0 +1,338 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-comic: "Orbitron", "Inter", sans-serif;
+  --font-hero: "Bangers", "Orbitron", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+
+  --color-sidebar-background: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@layer base {
+  /*
+   * Block Label — light / minimal / premium theme.
+   * Derived from block-label.com (clean near-white surfaces, charcoal text,
+   * a single refined indigo brand accent). The brand accent is centralised in
+   * the --brand* tokens below; the legacy --gold* / --gradient-gold names are
+   * remapped to it so every existing utility class picks up the new brand
+   * automatically. To retune the brand colour, edit --brand only.
+   */
+  :root {
+    --radius: 0.75rem;
+
+    /* Brand accent — Block Label is monochrome black on white. */
+    --brand: oklch(0.2 0 0);
+    --brand-strong: oklch(0.1 0 0);
+    --brand-foreground: oklch(0.99 0 0);
+
+    --background: oklch(0.99 0.002 270);
+    --foreground: oklch(0.22 0.012 275);
+
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.22 0.012 275);
+
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.22 0.012 275);
+
+    --primary: var(--brand);
+    --primary-foreground: var(--brand-foreground);
+
+    /* Legacy "gold" tokens remapped to the brand accent. */
+    --gold: var(--brand);
+    --gold-foreground: var(--brand-foreground);
+
+    --secondary: oklch(0.96 0.004 275);
+    --secondary-foreground: oklch(0.28 0.012 275);
+
+    --muted: oklch(0.965 0.004 275);
+    --muted-foreground: oklch(0.52 0.015 275);
+
+    --accent: oklch(0.95 0 0);
+    --accent-foreground: oklch(0.2 0 0);
+
+    --destructive: oklch(0.58 0.22 25);
+    --destructive-foreground: oklch(0.99 0 0);
+
+    --success: oklch(0.62 0.16 150);
+    --warning: oklch(0.74 0.16 75);
+
+    --border: oklch(0.91 0.004 275);
+    --input: oklch(0.93 0.004 275);
+    --ring: var(--brand);
+
+    --gradient-gold: linear-gradient(
+      135deg,
+      var(--brand),
+      var(--brand-strong)
+    );
+    --gradient-hero:
+      radial-gradient(
+        ellipse at top,
+        oklch(0.2 0 0 / 5%),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at bottom right,
+        oklch(0.2 0 0 / 4%),
+        transparent 60%
+      );
+    --shadow-gold: 0 14px 40px -14px oklch(0.2 0 0 / 18%);
+    --shadow-elegant: 0 22px 60px -28px oklch(0.2 0 0 / 14%);
+
+    --sidebar-background: oklch(0.985 0.003 275);
+    --sidebar-foreground: oklch(0.22 0.012 275);
+    --sidebar-primary: var(--brand);
+    --sidebar-primary-foreground: var(--brand-foreground);
+    --sidebar-accent: oklch(0.95 0 0);
+    --sidebar-accent-foreground: oklch(0.2 0 0);
+    --sidebar-border: oklch(0.91 0.004 275);
+    --sidebar-ring: var(--brand);
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  .glass {
+    background: oklch(1 0 0 / 72%);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(0.3 0.02 280 / 8%);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(oklch(0.3 0.02 280 / 5%) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.3 0.02 280 / 5%) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .aurora::before,
+  .aurora::after {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+    opacity: 0.55;
+    animation: aurora-drift 18s ease-in-out infinite;
+  }
+  .aurora::before {
+    background: radial-gradient(
+      40% 40% at 30% 30%,
+      oklch(0.2 0 0 / 6%),
+      transparent 70%
+    );
+  }
+  .aurora::after {
+    background: radial-gradient(
+      45% 45% at 70% 60%,
+      oklch(0.2 0 0 / 5%),
+      transparent 70%
+    );
+    animation-delay: -9s;
+  }
+
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px oklch(0.2 0 0 / 12%),
+      0 0 60px -10px oklch(0.2 0 0 / 16%),
+      inset 0 1px 0 oklch(1 0 0 / 40%);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-spin-slow {
+    animation: spin 18s linear infinite;
+  }
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  .animate-fade-up {
+    animation: fade-up 0.7s ease-out both;
+  }
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(1 0 0 / 12%),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.4s linear infinite;
+  }
+
+  .hover-lift {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    border-color: oklch(0.2 0 0 / 18%);
+    box-shadow: 0 20px 50px -22px oklch(0.2 0 0 / 14%);
+  }
+}
+
+@keyframes aurora-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(4%, -3%) scale(1.1);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(3deg);
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}

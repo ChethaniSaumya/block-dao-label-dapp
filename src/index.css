@@ -1,0 +1,8 @@
+/*
+ * Block Label — legacy client-entry stylesheet.
+ *
+ * The active design system lives in src/styles.css (Tailwind v4 @theme + tokens),
+ * loaded by the root route. This file previously held the "Healthy Heroes" comic
+ * theme (Bangers/Orbitron fonts, dark gradients) which is no longer used; it has
+ * been emptied to avoid loading off-brand fonts and conflicting styles.
+ */
