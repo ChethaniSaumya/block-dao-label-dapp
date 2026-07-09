@@ -1,0 +1,13 @@
+{
+  "round": 1,
+  "root": "0x2275b4cfa3750c752525a987fefaf4cff7257b03248a7568c23a5fff2cc4443e",
+  "count": 1,
+  "entries": {
+    "0x5b2c3bc037890a3d8a71111a6c8170c8c8e33cde": {
+      "index": 0,
+      "account": "0x5B2c3BC037890A3d8a71111A6C8170C8c8E33cDE",
+      "amount": "200000000000000000000000",
+      "proof": []
+    }
+  }
+}

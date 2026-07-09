@@ -1,0 +1,9 @@
+{
+  "network": "bscTestnet",
+  "wkeyDao2": "0xf8E80313fb9d9fCAca519691948Cd4BF0a256722",
+  "token": "0x7eE1E8089B397C582996e4baa1750947c7067F47",
+  "teamLockup": "0xCF98d8b36e82D3fCb5DCEC1EDbca860261FB66C8",
+  "staking": "0x7C80c2989282EAF1b199BEeCBDd758ccA9995893",
+  "distributor": "0x711D8a207564C7a8428735f79B4528d0Faa36eb1",
+  "lockSeconds": "300"
+}
