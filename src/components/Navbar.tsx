@@ -13,6 +13,7 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/dashboard", label: "Dashboard" },
   { to: "/airdrop", label: "Airdrop" },
+  { to: "/certificates", label: "Certificates" },
   { to: "/referral", label: "Referral" },
   { to: "/about", label: "About" },
 ] as const;

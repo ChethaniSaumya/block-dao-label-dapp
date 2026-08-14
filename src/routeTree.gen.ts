@@ -17,6 +17,8 @@ import { Route as LanguageRouteImport } from "./routes/language";
 import { Route as DashboardRouteImport } from "./routes/dashboard";
 import { Route as ConnectRouteImport } from "./routes/connect";
 import { Route as AirdropRouteImport } from "./routes/airdrop";
+import { Route as NftAdminRouteImport } from "./routes/nft-admin";
+import { Route as CertificatesRouteImport } from "./routes/certificates";
 import { Route as AdminRouteImport } from "./routes/admin";
 import { Route as AboutRouteImport } from "./routes/about";
 import { Route as IndexRouteImport } from "./routes/index";
@@ -57,6 +59,16 @@ const AirdropRoute = AirdropRouteImport.update({
   path: "/airdrop",
   getParentRoute: () => rootRouteImport,
 } as any);
+const NftAdminRoute = NftAdminRouteImport.update({
+  id: "/nft-admin",
+  path: "/nft-admin",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const CertificatesRoute = CertificatesRouteImport.update({
+  id: "/certificates",
+  path: "/certificates",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const AdminRoute = AdminRouteImport.update({
   id: "/admin",
   path: "/admin",
@@ -78,6 +90,8 @@ export interface FileRoutesByFullPath {
   "/about": typeof AboutRoute;
   "/admin": typeof AdminRoute;
   "/airdrop": typeof AirdropRoute;
+  "/certificates": typeof CertificatesRoute;
+  "/nft-admin": typeof NftAdminRoute;
   "/connect": typeof ConnectRoute;
   "/dashboard": typeof DashboardRoute;
   "/language": typeof LanguageRoute;
@@ -91,6 +105,8 @@ export interface FileRoutesByTo {
   "/about": typeof AboutRoute;
   "/admin": typeof AdminRoute;
   "/airdrop": typeof AirdropRoute;
+  "/certificates": typeof CertificatesRoute;
+  "/nft-admin": typeof NftAdminRoute;
   "/connect": typeof ConnectRoute;
   "/dashboard": typeof DashboardRoute;
   "/language": typeof LanguageRoute;
@@ -105,6 +121,8 @@ export interface FileRoutesById {
   "/about": typeof AboutRoute;
   "/admin": typeof AdminRoute;
   "/airdrop": typeof AirdropRoute;
+  "/certificates": typeof CertificatesRoute;
+  "/nft-admin": typeof NftAdminRoute;
   "/connect": typeof ConnectRoute;
   "/dashboard": typeof DashboardRoute;
   "/language": typeof LanguageRoute;
@@ -120,6 +138,8 @@ export interface FileRouteTypes {
     | "/about"
     | "/admin"
     | "/airdrop"
+    | "/certificates"
+    | "/nft-admin"
     | "/connect"
     | "/dashboard"
     | "/language"
@@ -133,6 +153,8 @@ export interface FileRouteTypes {
     | "/about"
     | "/admin"
     | "/airdrop"
+    | "/certificates"
+    | "/nft-admin"
     | "/connect"
     | "/dashboard"
     | "/language"
@@ -146,6 +168,8 @@ export interface FileRouteTypes {
     | "/about"
     | "/admin"
     | "/airdrop"
+    | "/certificates"
+    | "/nft-admin"
     | "/connect"
     | "/dashboard"
     | "/language"
@@ -160,6 +184,8 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute;
   AdminRoute: typeof AdminRoute;
   AirdropRoute: typeof AirdropRoute;
+  CertificatesRoute: typeof CertificatesRoute;
+  NftAdminRoute: typeof NftAdminRoute;
   ConnectRoute: typeof ConnectRoute;
   DashboardRoute: typeof DashboardRoute;
   LanguageRoute: typeof LanguageRoute;
@@ -214,6 +240,20 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof ConnectRouteImport;
       parentRoute: typeof rootRouteImport;
     };
+    "/nft-admin": {
+      id: "/nft-admin";
+      path: "/nft-admin";
+      fullPath: "/nft-admin";
+      preLoaderRoute: typeof NftAdminRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/certificates": {
+      id: "/certificates";
+      path: "/certificates";
+      fullPath: "/certificates";
+      preLoaderRoute: typeof CertificatesRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/airdrop": {
       id: "/airdrop";
       path: "/airdrop";
@@ -250,6 +290,8 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AdminRoute: AdminRoute,
   AirdropRoute: AirdropRoute,
+  CertificatesRoute: CertificatesRoute,
+  NftAdminRoute: NftAdminRoute,
   ConnectRoute: ConnectRoute,
   DashboardRoute: DashboardRoute,
   LanguageRoute: LanguageRoute,
