@@ -6,7 +6,12 @@
     "compile": "npx hardhat compile",
     "test": "npx hardhat test",
     "deploy:testnet": "npx hardhat run scripts/deploy_blocklabel.js --network bscTestnet",
-    "deploy:mainnet": "npx hardhat run scripts/deploy_blocklabel.js --network bscMainnet"
+    "deploy:mainnet": "npx hardhat run scripts/deploy_blocklabel.js --network bscMainnet",
+    "nft:probe": "node scripts/probe_ipfs_cid.js",
+    "nft:metadata": "node scripts/generate_nft_metadata.js",
+    "nft:pin": "node scripts/pin_metadata_pinata.js",
+    "nft:deploy:testnet": "npx hardhat run scripts/deploy_certificate_nft.js --network bscTestnet",
+    "nft:deploy:mainnet": "npx hardhat run scripts/deploy_certificate_nft.js --network bscMainnet"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",

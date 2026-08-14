@@ -1,0 +1,34 @@
+{
+  "_readme": "Single source of truth for the Creator DAO Certificate collection. Edit this file, then run `npm run nft:metadata` to regenerate all 10,000 metadata files. See NFT_ISSUANCE_GUIDE.md.",
+
+  "collection": {
+    "name": "Block Label Creator DAO Certificate",
+    "symbol": "BLDAO",
+    "description": "The Block Label Creator DAO Certificate is a limited series of 10,000 membership certificates issued by the Block Label Foundation on BNB Smart Chain. Each certificate carries a unique serial number and grants its holder access to the Block Label IP wholesale market, tiered membership benefits, and Creator DAO governance participation.",
+    "externalUrl": "https://dapp.blocklabel.io",
+    "issuer": "Block Label Foundation",
+    "network": "BNB Smart Chain",
+    "royaltyBps": 500,
+    "royaltyReceiver": "0xb09b2f5445eb54975876309fE94ec850C83e8902",
+    "collectionImageTokenId": 1
+  },
+
+  "supply": 10000,
+  "serialPrefix": "BLDAO-",
+  "serialPadding": 6,
+
+  "image": {
+    "_note": "CONFIRMED 2026-08-14 by reading the IPFS directory listing: 10,000 files named 1.jpg .. 10000.jpg, no zero padding, no gaps. `pattern` supports {id} (raw token id) and {pad} (zero-padded to serialPadding). `startIndex` is the file number that corresponds to token id 1 — set to 0 if the uploaded files are 0-indexed.",
+    "cid": "bafybeibtxq63vrsfjkgwe7ucy3j5irgxvpqlsnbsy2motfyu3jlnlgpwze",
+    "pattern": "{id}.jpg",
+    "startIndex": 1,
+    "gateway": "https://gateway.pinata.cloud/ipfs/"
+  },
+
+  "rounds": [
+    { "round": 1, "from": 1, "to": 1000, "bdlAirdrop": 200000 },
+    { "round": 2, "from": 1001, "to": 4000, "bdlAirdrop": 150000 },
+    { "round": 3, "from": 4001, "to": 7000, "bdlAirdrop": 120000 },
+    { "round": 4, "from": 7001, "to": 10000, "bdlAirdrop": 100000 }
+  ]
+}
