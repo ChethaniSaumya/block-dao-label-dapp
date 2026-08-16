@@ -22,7 +22,6 @@ import {
   Link2,
   Hash,
   Layers,
-  Tag,
   TrendingDown,
   Plus,
   Trash2,
@@ -270,8 +269,6 @@ function NftAdmin() {
   const [royaltyReceiver, setRoyaltyReceiver] = useState("");
   const [royaltyPct, setRoyaltyPct] = useState("5");
   const [roleAddress, setRoleAddress] = useState("");
-  const [newName, setNewName] = useState("");
-  const [newSymbol, setNewSymbol] = useState("");
   const [newPrefix, setNewPrefix] = useState("");
   const [newPadding, setNewPadding] = useState("");
   const [newCap, setNewCap] = useState("");
@@ -280,14 +277,12 @@ function NftAdmin() {
 
   // Seed the editable forms from chain state once it arrives.
   useEffect(() => {
-    if (collectionName && !newName) setNewName(collectionName as string);
-    if (collectionSymbol && !newSymbol) setNewSymbol(collectionSymbol as string);
     if (prefix !== undefined && !newPrefix) setNewPrefix(prefix as string);
     if (padding !== undefined && !newPadding) setNewPadding(String(padding));
     if (royaltyCap !== undefined && !newRoyaltyCap) {
       setNewRoyaltyCap(String(Number(royaltyCap) / 100));
     }
-  }, [collectionName, collectionSymbol, prefix, padding, royaltyCap]);
+  }, [prefix, padding, royaltyCap]);
 
   useEffect(() => {
     if (rounds.length && roundDraft.length === 0) {
@@ -909,40 +904,6 @@ function NftAdmin() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="space-y-3">
-            <h3 className="text-sm font-medium flex items-center gap-2">
-              <Tag className="w-4 h-4" /> {t("Name & Symbol")}
-            </h3>
-            <Field
-              label={t("Collection name")}
-              value={newName}
-              onChange={(e) => setNewName(e.target.value)}
-              disabled={!isAdmin}
-            />
-            <Field
-              label={t("Symbol")}
-              value={newSymbol}
-              onChange={(e) => setNewSymbol(e.target.value)}
-              disabled={!isAdmin}
-            />
-            <OutlineButton
-              className="w-full px-4 py-2"
-              disabled={!isAdmin || busy || !newName.trim() || !newSymbol.trim()}
-              onClick={() =>
-                send(t("Rename collection"), () =>
-                  write({
-                    address: nft,
-                    abi: certificateNftAbi,
-                    functionName: "setNameAndSymbol",
-                    args: [newName.trim(), newSymbol.trim()],
-                  }),
-                )
-              }
-            >
-              {t("Save name & symbol")}
-            </OutlineButton>
-          </div>
-
           <div className="space-y-3">
             <h3 className="text-sm font-medium flex items-center gap-2">
               <Hash className="w-4 h-4" /> {t("Serial Number Format")}
