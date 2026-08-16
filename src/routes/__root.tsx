@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
         },
       ],
     }),
@@ -109,12 +109,29 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <I18nProvider>
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="relative min-h-screen flex flex-col bg-background">
+        {/*
+          The gold grid mesh, pinned to the viewport so it carries through
+          every section instead of being trapped inside a single box. Same
+          pattern the hero and the closing CTA already use — this just gives
+          the sections between them the same ground.
+
+          It sits at z-0; the hero artwork and every card surface paint above
+          it, so it reads in the open space between sections. Content must stay
+          positioned above it: a `fixed` element is a positioned box, so static
+          siblings would otherwise render underneath it.
+        */}
+        <div
+          aria-hidden="true"
+          className="fixed inset-0 z-0 grid-page pointer-events-none"
+        />
         <Navbar />
-        <main className="flex-1">
+        <main className="relative z-10 flex-1">
           <Outlet />
         </main>
-        <Footer />
+        <div className="relative z-10">
+          <Footer />
+        </div>
       </div>
       <Toaster />
     </I18nProvider>

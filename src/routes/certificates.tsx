@@ -64,8 +64,8 @@ function CertificateCard({
   const image = ipfsToHttp(meta?.image);
 
   return (
-    <Card className="p-0 overflow-hidden">
-      <div className="aspect-square bg-secondary flex items-center justify-center">
+    <Card className="p-0 overflow-hidden" ornament>
+      <div className="aspect-square bg-secondary flex items-center justify-center border-b border-border">
         {image ? (
           <img
             src={image}
@@ -82,7 +82,9 @@ function CertificateCard({
       </div>
       <div className="p-5">
         <div className="flex items-center justify-between">
-          <span className="font-mono text-sm font-semibold">{serial}</span>
+          <span className="font-engraved text-sm font-semibold tracking-[0.1em] foil">
+            {serial}
+          </span>
           <Badge variant="muted">Round {round?.round ?? "—"}</Badge>
         </div>
         <div className="mt-3 flex items-baseline justify-between text-xs">
@@ -154,10 +156,12 @@ function Certificates() {
   return (
     <Section className="py-12">
       <div className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
+        <div className="eyebrow mb-2">{t("Authenticity Verified")}</div>
+        <h1 className="font-engraved text-3xl md:text-4xl font-medium">
           {t("Creator DAO Certificates")}
         </h1>
-        <p className="mt-2 text-muted-foreground max-w-2xl">
+        <hr className="rule-gold mt-4 max-w-xs" />
+        <p className="mt-4 text-muted-foreground max-w-2xl">
           {t(
             "Your Block Label Creator DAO Certificates. Each certificate carries a unique serial number, an allocated {{SYMBOL}} airdrop, and access to the IP wholesale market.",
           )}
@@ -198,17 +202,17 @@ function Certificates() {
       </Card>
 
       <div className="grid sm:grid-cols-3 gap-4 mt-6">
-        <div className="p-4 rounded-lg bg-secondary">
+        <div className="p-4 rounded-lg tile">
           <div className="text-xs text-muted-foreground">{t("Your certificates")}</div>
           <div className="font-display text-2xl font-semibold mt-1">{tokenIds.length}</div>
         </div>
-        <div className="p-4 rounded-lg bg-secondary">
+        <div className="p-4 rounded-lg tile">
           <div className="text-xs text-muted-foreground">{t("Allocated airdrop")}</div>
           <div className="font-display text-2xl font-semibold mt-1">
             {totalBdl.toLocaleString()} {BRAND.symbol}
           </div>
         </div>
-        <div className="p-4 rounded-lg bg-secondary">
+        <div className="p-4 rounded-lg tile">
           <div className="text-xs text-muted-foreground">{t("Issued collection-wide")}</div>
           <div className="font-display text-2xl font-semibold mt-1">
             {Number(totalIssued ?? 0n).toLocaleString()}

@@ -58,7 +58,7 @@ function CreatorDAO() {
             {data?.account?.role?.[0] || "M"}
           </div>
           <h2 className="font-semibold text-lg">{t("DAO Role")}</h2>
-          <p className="text-2xl font-display font-bold mt-1 text-[oklch(0.2_0_0)]">
+          <p className="text-2xl font-display font-bold mt-1 text-[var(--gold-lift)]">
             {data?.account?.role ? t(data.account.role) : "Loading..."}
           </p>
         </Card>
@@ -80,7 +80,7 @@ function CreatorDAO() {
           <div className="text-sm text-muted-foreground">
             {t("Rewards Earned")}
           </div>
-          <div className="mt-2 text-2xl font-display font-semibold text-[oklch(0.6_0.15_145)]">
+          <div className="mt-2 text-2xl font-display font-semibold text-[var(--success)]">
             +{data?.account?.rewards_earned || 0} {BRAND.symbol}
           </div>
         </Card>
@@ -135,7 +135,7 @@ function CreatorDAO() {
                       <td className="py-3 px-4 font-medium">{p.title}</td>
                       <td className="py-3 px-4 text-center">
                         {p.status === "Passed" ? (
-                          <div className="flex items-center justify-center gap-1 text-[oklch(0.6_0.15_145)]">
+                          <div className="flex items-center justify-center gap-1 text-[var(--success)]">
                             <CheckCircle2 className="w-4 h-4" />{" "}
                             <span className="text-xs">Passed</span>
                           </div>
@@ -145,7 +145,7 @@ function CreatorDAO() {
                             <span className="text-xs">Rejected</span>
                           </div>
                         ) : (
-                          <span className="text-xs text-[oklch(0.2_0_0)]">
+                          <span className="text-xs text-[var(--gold-lift)]">
                             Active
                           </span>
                         )}
@@ -206,7 +206,7 @@ function CreatorDAO() {
                           {p.description}
                         </div>
                       </td>
-                      <td className="py-3 px-4 text-right font-mono text-[oklch(0.6_0.15_145)]">
+                      <td className="py-3 px-4 text-right font-mono text-[var(--success)]">
                         {p.reward > 0 ? `+${p.reward} ${BRAND.symbol}` : "—"}
                       </td>
                     </tr>

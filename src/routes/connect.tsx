@@ -60,8 +60,8 @@ function Connect() {
               if (connected) {
                 return (
                   <div className="mt-8 space-y-4">
-                    <div className="p-4 rounded-lg border border-[oklch(0.72_0.18_150_/_40%)] bg-[oklch(0.72_0.18_150_/_8%)]">
-                      <div className="flex items-center justify-center gap-2 text-[oklch(0.72_0.18_150)]">
+                    <div className="p-4 rounded-lg border border-[rgba(79,169,124,0.40)] bg-[rgba(79,169,124,0.10)]">
+                      <div className="flex items-center justify-center gap-2 text-[var(--success)]">
                         <CheckCircle2 className="w-5 h-5" />
                         <span className="font-semibold">
                           {t("Wallet Connected")}
@@ -139,7 +139,7 @@ function Connect() {
               </div>
               {i < steps.length - 1 && (
                 <div
-                  className={`flex-1 h-px -mt-6 ${i < currentStep ? "bg-[oklch(0.2_0_0)]" : "bg-border"}`}
+                  className={`flex-1 h-px -mt-6 ${i < currentStep ? "bg-[var(--gold-lift)]" : "bg-border"}`}
                 />
               )}
             </div>
@@ -156,7 +156,7 @@ function Connect() {
         <p className="mt-4 text-center text-xs">
           <Link
             to="/dashboard"
-            className="text-[oklch(0.2_0_0)] hover:underline"
+            className="text-[var(--gold-lift)] hover:underline"
           >
             {t("Skip to demo dashboard →")}
           </Link>

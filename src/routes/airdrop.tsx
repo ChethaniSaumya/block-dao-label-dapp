@@ -1,11 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, useCallback } from "react";
-import {
-  Section,
-  Card,
-  GoldButton,
-  PageHeader,
-} from "@/components/ui-bits";
+import { Section, Card, GoldButton, PageHeader, Badge } from "@/components/ui-bits";
 import { WalletGuard } from "@/components/WalletGuard";
 import { useI18n } from "@/lib/i18n";
 import { BRAND } from "@/lib/brand";
@@ -147,14 +142,14 @@ function Airdrop() {
       <div className="grid md:grid-cols-2 gap-8 mt-8">
         <div className="space-y-6">
           {/* Claim card */}
-          <Card className="bg-gradient-gold text-gold-foreground border-none">
-            <h2 className="text-lg font-semibold mb-6">{t("Your Claim")}</h2>
-            <div className="flex items-center justify-between">
+          <Card ornament>
+            <div className="eyebrow mb-5">{t("Your Claim")}</div>
+            <div className="flex items-start justify-between gap-4">
               <div>
-                <div className="text-gold-foreground/70 text-sm">
+                <div className="text-muted-foreground text-sm">
                   {claim ? t("Claimable Now") : t("Estimated Reward")}
                 </div>
-                <div className="font-display text-2xl font-bold mt-1">
+                <div className="font-engraved text-3xl font-medium mt-1.5 foil">
                   {loading
                     ? "..."
                     : claim
@@ -163,24 +158,23 @@ function Airdrop() {
                   {BRAND.symbol}
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium uppercase tracking-wide bg-black/15 border border-black/20">
-                <span
-                  className={`w-1.5 h-1.5 rounded-full ${eligible ? "bg-emerald-800" : "bg-amber-800"}`}
-                />
+              <Badge variant={eligible ? "success" : "warning"}>
                 {eligible ? t("Qualified") : t("Pending")}
-              </span>
+              </Badge>
             </div>
 
-            <div className="mt-6 pt-6 border-t border-gold-foreground/20">
+            <hr className="rule-gold my-6" />
+
+            <div>
               {!distReady ? (
-                <div className="text-xs text-gold-foreground/80">
+                <div className="text-xs text-muted-foreground">
                   {t("Airdrop distributor not deployed yet.")}
                 </div>
               ) : claim ? (
                 <GoldButton
                   onClick={handleClaim}
                   disabled={busy}
-                  className="w-full bg-black/80 hover:bg-black/90 text-gold border-none"
+                  className="w-full"
                 >
                   {busy ? (
                     <>
@@ -192,7 +186,7 @@ function Airdrop() {
                   )}
                 </GoldButton>
               ) : (
-                <div className="text-xs text-gold-foreground/80">
+                <div className="text-xs text-muted-foreground">
                   {eligible
                     ? t("You're eligible — your round allocation opens soon.")
                     : t("Wait for verification to qualify.")}
@@ -218,7 +212,7 @@ function Airdrop() {
               ].map((c, i) => (
                 <li key={i} className="flex items-center gap-3 text-sm">
                   <div
-                    className={`w-5 h-5 rounded-full flex items-center justify-center text-xs ${c.done ? "bg-[oklch(0.6_0.15_145)] text-white" : "bg-muted text-muted-foreground"}`}
+                    className={`w-5 h-5 rounded-full flex items-center justify-center text-xs ${c.done ? "bg-[var(--success)] text-white" : "bg-muted text-muted-foreground"}`}
                   >
                     {c.done ? "✓" : ""}
                   </div>
@@ -245,7 +239,7 @@ function Airdrop() {
               )}
             </p>
             {confirmed && (
-              <div className="mt-4 flex items-center gap-2 text-sm text-[oklch(0.5_0.15_150)]">
+              <div className="mt-4 flex items-center gap-2 text-sm text-[var(--success)]">
                 <CheckCircle2 className="w-4 h-4" /> {t("Claim confirmed on-chain.")}
               </div>
             )}

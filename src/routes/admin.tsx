@@ -364,13 +364,13 @@ function Admin() {
             <h2 className="font-semibold mb-4">{t("Manual Override")}</h2>
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-3 rounded-lg bg-secondary">
+                <div className="p-3 rounded-lg tile">
                   <div className="text-xs text-muted-foreground">
                     {t("Next Airdrop Date")}
                   </div>
                   <div className="font-semibold mt-1">May 15, 2026</div>
                 </div>
-                <div className="p-3 rounded-lg bg-secondary">
+                <div className="p-3 rounded-lg tile">
                   <div className="text-xs text-muted-foreground">
                     {t("Minimum Staking Required")}
                   </div>
@@ -456,7 +456,7 @@ function Admin() {
                           <a
                             href={`https://bscscan.com/tx/${log.tx_hash}`}
                             target="_blank"
-                            className="hover:underline text-[oklch(0.2_0_0)]"
+                            className="hover:underline text-[var(--gold-lift)]"
                           >
                             {log.tx_hash.slice(0, 8)}...
                           </a>

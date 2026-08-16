@@ -6,6 +6,7 @@
 
 @theme inline {
   --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-engraved: "Cinzel", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-comic: "Orbitron", "Inter", sans-serif;
@@ -40,6 +41,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-gold: var(--gold);
+  --color-gold-lift: var(--gold-lift);
+  --color-gold-deep: var(--gold-deep);
   --color-gold-foreground: var(--gold-foreground);
 
   --color-sidebar-background: var(--sidebar-background);
@@ -83,75 +86,79 @@
    * automatically. To retune the brand colour, edit --brand only.
    */
   :root {
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Brand accent — Block Label is monochrome black on white. */
-    --brand: oklch(0.2 0 0);
-    --brand-strong: oklch(0.1 0 0);
-    --brand-foreground: oklch(0.99 0 0);
+    /* Gold foil — the accent, drawn from the certificate's frame and seal. */
+    --brand: #C8A24A;
+    --brand-strong: #8A6B22;
+    --brand-foreground: #120E04;
+    --gold: #C8A24A;
+    --gold-lift: #E9CE86;
+    --gold-deep: #8A6B22;
+    --gold-foreground: #120E04;
 
-    --background: oklch(0.99 0.002 270);
-    --foreground: oklch(0.22 0.012 275);
+    /* Deep navy ground. Gold only reads as metal against a dark field. */
+    --background: #070C18;
+    --foreground: #ECE4D2;
 
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.22 0.012 275);
+    --card: #0E1728;
+    --card-foreground: #ECE4D2;
 
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.22 0.012 275);
+    --popover: #0B1222;
+    --popover-foreground: #ECE4D2;
 
     --primary: var(--brand);
     --primary-foreground: var(--brand-foreground);
 
-    /* Legacy "gold" tokens remapped to the brand accent. */
-    --gold: var(--brand);
-    --gold-foreground: var(--brand-foreground);
+    --secondary: #142038;
+    --secondary-foreground: #ECE4D2;
 
-    --secondary: oklch(0.96 0.004 275);
-    --secondary-foreground: oklch(0.28 0.012 275);
+    --muted: #101B2F;
+    --muted-foreground: #94A1B8;
 
-    --muted: oklch(0.965 0.004 275);
-    --muted-foreground: oklch(0.52 0.015 275);
+    --accent: #142038;
+    --accent-foreground: var(--gold-lift);
 
-    --accent: oklch(0.95 0 0);
-    --accent-foreground: oklch(0.2 0 0);
+    --destructive: #C4574A;
+    --destructive-foreground: #FFF3F0;
 
-    --destructive: oklch(0.58 0.22 25);
-    --destructive-foreground: oklch(0.99 0 0);
+    --success: #4FA97C;
+    --warning: #D9A63C;
 
-    --success: oklch(0.62 0.16 150);
-    --warning: oklch(0.74 0.16 75);
+    /* Hairlines, never heavy borders. */
+    --border: rgba(200, 162, 74, 0.16);
+    --input: #101B2F;
+    --ring: var(--gold);
 
-    --border: oklch(0.91 0.004 275);
-    --input: oklch(0.93 0.004 275);
-    --ring: var(--brand);
-
+    /* Foil sheen — a real gradient, not a flat fill. */
     --gradient-gold: linear-gradient(
       135deg,
-      var(--brand),
-      var(--brand-strong)
+      #8A6B22 0%,
+      #E9CE86 34%,
+      #C8A24A 52%,
+      #F5E6B8 70%,
+      #8A6B22 100%
     );
+    /* Warm gold from the top, a faint blue counterpoint at upper right, and a
+       second, quieter gold echo at the lower left so the wash doesn't read as
+       a single hero spotlight when it scrolls under page content below. */
     --gradient-hero:
-      radial-gradient(
-        ellipse at top,
-        oklch(0.2 0 0 / 5%),
-        transparent 60%
-      ),
-      radial-gradient(
-        ellipse at bottom right,
-        oklch(0.2 0 0 / 4%),
-        transparent 60%
-      );
-    --shadow-gold: 0 14px 40px -14px oklch(0.2 0 0 / 18%);
-    --shadow-elegant: 0 22px 60px -28px oklch(0.2 0 0 / 14%);
+      radial-gradient(ellipse 80% 55% at 50% -10%, rgba(200, 162, 74, 0.17), transparent 62%),
+      radial-gradient(ellipse 60% 45% at 88% 12%, rgba(60, 110, 190, 0.12), transparent 66%),
+      radial-gradient(ellipse 60% 45% at 8% 96%, rgba(200, 162, 74, 0.07), transparent 68%);
 
-    --sidebar-background: oklch(0.985 0.003 275);
-    --sidebar-foreground: oklch(0.22 0.012 275);
+    /* Elevation is a glow on dark, never a drop shadow. */
+    --shadow-gold: 0 0 0 1px rgba(200, 162, 74, 0.18), 0 18px 46px -22px rgba(200, 162, 74, 0.45);
+    --shadow-elegant: 0 1px 0 0 rgba(200, 162, 74, 0.08) inset, 0 24px 60px -34px rgba(0, 0, 0, 0.9);
+
+    --sidebar-background: #0B1222;
+    --sidebar-foreground: #ECE4D2;
     --sidebar-primary: var(--brand);
     --sidebar-primary-foreground: var(--brand-foreground);
-    --sidebar-accent: oklch(0.95 0 0);
-    --sidebar-accent-foreground: oklch(0.2 0 0);
-    --sidebar-border: oklch(0.91 0.004 275);
-    --sidebar-ring: var(--brand);
+    --sidebar-accent: #142038;
+    --sidebar-accent-foreground: var(--gold-lift);
+    --sidebar-border: rgba(200, 162, 74, 0.16);
+    --sidebar-ring: var(--gold);
   }
 }
 
@@ -166,23 +173,46 @@
 
   body {
     background-color: var(--color-background);
+    background-image: var(--gradient-hero);
+    background-attachment: fixed;
     color: var(--color-foreground);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
   }
 
+  /* Tailwind's Preflight resets `button { cursor: default }` to match native
+     behaviour, but every button here is a click target, not a form control —
+     restore the pointer cursor site-wide rather than patching each one. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+  button:disabled,
+  [role="button"][aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
   h1,
-  h2,
+  h2 {
+    font-family: var(--font-engraved);
+    letter-spacing: 0.005em;
+    font-weight: 500;
+  }
+
   h3,
   h4,
   h5 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     font-weight: 600;
   }
 
   .font-display {
     font-family: var(--font-display);
+  }
+  .font-engraved {
+    font-family: var(--font-engraved);
+    letter-spacing: 0.02em;
   }
   .font-mono {
     font-family: var(--font-mono);
@@ -209,15 +239,245 @@
     box-shadow: var(--shadow-elegant);
   }
   .glass {
-    background: oklch(1 0 0 / 72%);
-    backdrop-filter: blur(12px);
-    border: 1px solid oklch(0.3 0.02 280 / 8%);
+    background: rgba(7, 12, 24, 0.82);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(200, 162, 74, 0.16);
+  }
+
+  /* ── Certificate devices ─────────────────────────────────────────── */
+
+  /* Hairline divider that fades at both ends, as on the certificate. */
+  .rule-gold {
+    height: 1px;
+    border: 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.55;
+  }
+
+  /* Art-deco corner ticks. Apply to a `position: relative` element. */
+  .ornament {
+    position: relative;
+  }
+  .ornament::before,
+  .ornament::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--gold);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .ornament::before {
+    top: 7px;
+    left: 7px;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  .ornament::after {
+    bottom: 7px;
+    right: 7px;
+    border-left: 0;
+    border-top: 0;
+  }
+
+  /* Engraved gold lettering. */
+  .foil {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--gold-lift);
+  }
+  @supports (-webkit-background-clip: text) {
+    .foil {
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  /* Small-caps label, as used for the certificate's field names. */
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* Hero backdrop — the certificate's globe.
+     Deliberately NOT a pseudo-element: the hero also carries `.aurora`, which
+     defines its own ::before/::after later in this file and would overwrite
+     these rules on the same element. Applied to real child divs instead. */
+  .hero-bg {
+    background-image: url("/hero-bg.png");
+    background-size: cover;
+    background-position: center 38%;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    /* Feather every edge so the artwork dissolves into the page rather than
+       stopping at a visible rectangle. */
+    -webkit-mask-image: radial-gradient(
+      ellipse 85% 78% at 55% 45%,
+      #000 38%,
+      transparent 82%
+    );
+    mask-image: radial-gradient(
+      ellipse 85% 78% at 55% 45%,
+      #000 38%,
+      transparent 82%
+    );
+  }
+
+  /* Black fade sitting over the artwork so headline text keeps its contrast
+     and the bottom edge melts into the page ground. */
+  .hero-scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 12, 24, 0.35) 0%,
+      rgba(7, 12, 24, 0.55) 45%,
+      rgba(7, 12, 24, 0.88) 82%,
+      var(--background) 100%
+    );
+  }
+
+  /* The same gold mesh as `.grid-bg`, tuned to sit behind the whole page:
+     slightly stronger lines so it reads through the open space between
+     sections, and a soft vignette so it fades at the viewport edges instead
+     of running off like graph paper. */
+  .grid-page {
+    background-image:
+      linear-gradient(rgba(200, 162, 74, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200, 162, 74, 0.08) 1px, transparent 1px);
+    background-size: 72px 72px;
+    /* Weighted to the right edge and fading out to the left, so the mesh reads
+       as light falling across the page rather than uniform graph paper. The
+       second gradient softens the top and bottom edges; the two are
+       intersected so both fades apply. */
+    -webkit-mask-image:
+      linear-gradient(
+        to left,
+        #000 0%,
+        rgba(0, 0, 0, 0.55) 26%,
+        rgba(0, 0, 0, 0.12) 55%,
+        transparent 78%
+      ),
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000 10%,
+        #000 82%,
+        transparent 100%
+      );
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(
+        to left,
+        #000 0%,
+        rgba(0, 0, 0, 0.55) 26%,
+        rgba(0, 0, 0, 0.12) 55%,
+        transparent 78%
+      ),
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000 10%,
+        #000 82%,
+        transparent 100%
+      );
+    mask-composite: intersect;
+  }
+
+  /* Footer base — its own quiet ground so the mesh doesn't run through it,
+     with a warm lift from above and a gold hairline across the top edge. */
+  .footer-luxe {
+    position: relative;
+    background:
+      radial-gradient(
+        ellipse 70% 130% at 50% 0%,
+        rgba(200, 162, 74, 0.07),
+        transparent 68%
+      ),
+      linear-gradient(180deg, rgba(20, 32, 56, 0.72) 0%, var(--background) 62%);
+  }
+  .footer-luxe::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(200, 162, 74, 0.55),
+      transparent
+    );
+  }
+
+  /* Gold dust behind the hero. Positions are set inline by <Particles />;
+     only the look and the drift live here. */
+  .particle {
+    position: absolute;
+    border-radius: 9999px;
+    /* Solid core before the falloff. A gradient that starts fading at 0%
+       leaves nothing visible at these sizes. */
+    background: radial-gradient(
+      circle,
+      rgba(255, 249, 232, 1) 0%,
+      rgba(245, 230, 184, 0.95) 40%,
+      rgba(200, 162, 74, 0.7) 70%,
+      transparent 100%
+    );
+    animation-name: particle-drift;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .particle {
+      animation: none;
+    }
+  }
+
+  /* Panel surface: a warm gold wash falling from the top edge over the navy
+     plate, so every card catches a little light instead of reading flat. */
+  .plate {
+    background:
+      linear-gradient(180deg, rgba(200, 162, 74, 0.06) 0%, transparent 42%),
+      linear-gradient(180deg, var(--card), rgba(14, 23, 40, 0.55));
+  }
+
+  /* Gilded top edge — a hairline of foil across the top of a surface, brightest
+     at the centre. Pair with `relative`. */
+  .gilt-edge {
+    position: relative;
+  }
+  .gilt-edge::after {
+    content: "";
+    position: absolute;
+    /* Inset past the corner radius so the line never overshoots a rounded
+       corner — the surface it sits on is not clipped. */
+    inset: 0 1rem auto 1rem;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(233, 206, 134, 0.5),
+      transparent
+    );
+    pointer-events: none;
+  }
+
+  /* Inset data tiles — the small stat boxes. Same warm lift, less of it. */
+  .tile {
+    background:
+      linear-gradient(180deg, rgba(200, 162, 74, 0.07) 0%, transparent 55%),
+      linear-gradient(180deg, var(--secondary), rgba(16, 27, 47, 0.85));
+    border: 1px solid rgba(200, 162, 74, 0.12);
   }
 
   .grid-bg {
     background-image:
-      linear-gradient(oklch(0.3 0.02 280 / 5%) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.3 0.02 280 / 5%) 1px, transparent 1px);
+      linear-gradient(rgba(200, 162, 74, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200, 162, 74, 0.06) 1px, transparent 1px);
     background-size: 56px 56px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
   }
@@ -236,14 +496,14 @@
   .aurora::before {
     background: radial-gradient(
       40% 40% at 30% 30%,
-      oklch(0.2 0 0 / 6%),
+      rgba(200, 162, 74, 0.10),
       transparent 70%
     );
   }
   .aurora::after {
     background: radial-gradient(
       45% 45% at 70% 60%,
-      oklch(0.2 0 0 / 5%),
+      rgba(60, 110, 190, 0.10),
       transparent 70%
     );
     animation-delay: -9s;
@@ -251,9 +511,9 @@
 
   .glow-ring {
     box-shadow:
-      0 0 0 1px oklch(0.2 0 0 / 12%),
-      0 0 60px -10px oklch(0.2 0 0 / 16%),
-      inset 0 1px 0 oklch(1 0 0 / 40%);
+      0 0 0 1px rgba(200, 162, 74, 0.28),
+      0 0 80px -10px rgba(200, 162, 74, 0.35),
+      inset 0 1px 0 rgba(245, 230, 184, 0.25);
   }
 
   .animate-float {
@@ -289,6 +549,16 @@
     transform: translateY(-4px);
     border-color: oklch(0.2 0 0 / 18%);
     box-shadow: 0 20px 50px -22px oklch(0.2 0 0 / 14%);
+  }
+}
+
+@keyframes particle-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(var(--drift, 12px), -18px, 0);
   }
 }
 

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  LineChart,
-  Line,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   Tooltip,
@@ -216,7 +216,7 @@ function Dashboard() {
             href={`https://bscscan.com/address/${address}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-[oklch(0.2_0_0)]"
+            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-[var(--gold-lift)]"
           >
             <ExternalLink className="w-3 h-3" /> BscScan
           </a>
@@ -227,7 +227,7 @@ function Dashboard() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((s) => (
           <Card key={s.label}>
-            <s.icon className="w-5 h-5 text-[oklch(0.2_0_0)]" />
+            <s.icon className="w-5 h-5 text-[var(--gold-lift)]" />
             <div className="mt-3 text-xs text-muted-foreground">
               {t(s.label)}
             </div>
@@ -249,38 +249,64 @@ function Dashboard() {
         </div>
         <div className="h-72">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={priceData}>
+            {/*
+              Single series, so no legend — the card title names it. Grid and
+              axes stay recessive; the gold mark carries the identity. Colours
+              are literals rather than CSS vars because recharts renders these
+              as SVG attributes, which don't resolve var().
+            */}
+            <AreaChart data={priceData} margin={{ top: 8, right: 8, bottom: 0, left: 0 }}>
+              <defs>
+                <linearGradient id="priceFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#C8A24A" stopOpacity={0.28} />
+                  <stop offset="100%" stopColor="#C8A24A" stopOpacity={0} />
+                </linearGradient>
+              </defs>
               <CartesianGrid
                 strokeDasharray="3 3"
-                stroke="oklch(0.3 0.02 280 / 12%)"
+                stroke="rgba(200,162,74,0.10)"
+                vertical={false}
               />
               <XAxis
                 dataKey="day"
-                stroke="oklch(0.52 0.015 275)"
-                fontSize={11}
+                stroke="rgba(148,161,184,0.35)"
+                tick={{ fill: "#94A1B8", fontSize: 11 }}
+                tickLine={false}
               />
               <YAxis
-                stroke="oklch(0.52 0.015 275)"
-                fontSize={11}
+                stroke="rgba(148,161,184,0.35)"
+                tick={{ fill: "#94A1B8", fontSize: 11 }}
+                tickLine={false}
                 domain={["auto", "auto"]}
                 tickFormatter={(v) => `$${v.toFixed(3)}`}
               />
               <Tooltip
+                cursor={{ stroke: "rgba(200,162,74,0.45)", strokeWidth: 1 }}
                 contentStyle={{
-                  background: "oklch(1 0 0)",
-                  border: "1px solid oklch(0.91 0.004 275)",
+                  background: "#0E1728",
+                  border: "1px solid rgba(200,162,74,0.28)",
                   borderRadius: 8,
-                  color: "oklch(0.22 0.012 275)",
+                  color: "#ECE4D2",
                 }}
+                labelStyle={{ color: "#94A1B8" }}
+                itemStyle={{ color: "#E9CE86" }}
+                formatter={(v: number) => [`$${v.toFixed(4)}`, "Price"]}
               />
-              <Line
+              <Area
                 type="monotone"
                 dataKey="price"
-                stroke="oklch(0.2 0 0)"
-                strokeWidth={2.5}
+                stroke="#C8A24A"
+                strokeWidth={2}
+                fill="url(#priceFill)"
                 dot={false}
+                activeDot={{
+                  r: 4,
+                  fill: "#E9CE86",
+                  stroke: "#0E1728",
+                  strokeWidth: 2,
+                }}
               />
-            </LineChart>
+            </AreaChart>
           </ResponsiveContainer>
         </div>
       </Card>
@@ -296,7 +322,7 @@ function Dashboard() {
             </h2>
             <Link
               to="/transactions"
-              className="text-xs text-[oklch(0.2_0_0)] hover:underline"
+              className="text-xs text-[var(--gold-lift)] hover:underline"
             >
               {t("View All")}
             </Link>
@@ -332,7 +358,7 @@ function Dashboard() {
                         {tx.amount.startsWith("-") ? (
                           <ArrowUpRight className="w-4 h-4 text-muted-foreground" />
                         ) : (
-                          <ArrowDownLeft className="w-4 h-4 text-[oklch(0.72_0.18_150)]" />
+                          <ArrowDownLeft className="w-4 h-4 text-[var(--success)]" />
                         )}
                         {t(tx.type)}
                       </td>
@@ -342,7 +368,7 @@ function Dashboard() {
                           href={`https://bscscan.com/tx/${tx.tx_hash}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-mono text-xs text-muted-foreground hover:text-[oklch(0.2_0_0)]"
+                          className="font-mono text-xs text-muted-foreground hover:text-[var(--gold-lift)]"
                         >
                           {tx.tx_hash.slice(0, 8)}...
                         </a>
@@ -389,10 +415,10 @@ function Dashboard() {
               <Link
                 key={a.label}
                 to={a.to}
-                className="flex items-center gap-3 p-3 rounded-lg border border-border hover:bg-secondary hover:border-[oklch(0.2_0_0_/_30%)] transition group"
+                className="flex items-center gap-3 p-3 rounded-lg border border-border hover:bg-secondary hover:border-[rgba(200,162,74,0.30)] transition group"
               >
-                <div className="w-10 h-10 rounded-lg bg-[oklch(0.2_0_0_/_10%)] flex items-center justify-center group-hover:scale-110 transition">
-                  <a.icon className="w-5 h-5 text-[oklch(0.2_0_0)]" />
+                <div className="w-10 h-10 rounded-lg bg-[rgba(200,162,74,0.10)] flex items-center justify-center group-hover:scale-110 transition">
+                  <a.icon className="w-5 h-5 text-[var(--gold-lift)]" />
                 </div>
                 <div>
                   <div className="text-sm font-medium">{t(a.label)}</div>

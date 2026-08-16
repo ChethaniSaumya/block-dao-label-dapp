@@ -38,7 +38,7 @@ function Toggle({
   return (
     <button
       onClick={() => onChange(!checked)}
-      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${checked ? "bg-[oklch(0.2_0_0)]" : "bg-muted"}`}
+      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${checked ? "bg-[var(--gold-lift)]" : "bg-muted"}`}
     >
       <span
         className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${checked ? "translate-x-6" : "translate-x-1"}`}
@@ -107,7 +107,7 @@ function Profile() {
       <div className="space-y-6 max-w-3xl">
         <Card>
           <h3 className="font-semibold mb-4">{t("Connected Wallet")}</h3>
-          <div className="flex items-center justify-between p-4 rounded-lg bg-secondary">
+          <div className="flex items-center justify-between p-4 rounded-lg tile">
             <div>
               <div className="font-mono">{shortAddr}</div>
               <div className="text-xs text-muted-foreground mt-1">

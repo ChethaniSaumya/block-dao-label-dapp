@@ -16,7 +16,9 @@ import {
   Copy,
 } from "lucide-react";
 import { Section, Card, GoldButton, OutlineButton } from "@/components/ui-bits";
+import { Particles } from "@/components/Particles";
 import { useI18n } from "@/lib/i18n";
+import inCircleLogo from "@/assets/in-circle.png";
 import { BRAND } from "@/lib/brand";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
@@ -107,13 +109,16 @@ function Home() {
     <>
       {/* Hero */}
       <div className="relative overflow-hidden aurora">
-        <div className="absolute inset-0 grid-bg pointer-events-none" />
+        <div className="absolute inset-0 hero-bg pointer-events-none" />
+        <div className="absolute inset-0 hero-scrim pointer-events-none" />
+        <div className="absolute inset-0 grid-bg pointer-events-none opacity-30" />
+        <Particles />
         <Section className="py-24 md:py-36 relative z-10">
           <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
             <div className="animate-fade-up">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-medium mb-6">
-                <Sparkles className="w-3.5 h-3.5 text-[oklch(0.2_0_0)]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.72_0.18_150)] animate-pulse" />
+                <Sparkles className="w-3.5 h-3.5 text-[var(--gold-lift)]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)] animate-pulse" />
                 {t("Live on BNB Chain")} · v2.0
               </div>
               <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[1]">
@@ -193,18 +198,20 @@ function Home() {
                 <div className="relative animate-float">
                   <div className="w-56 h-56 rounded-full bg-gradient-gold glow-ring flex items-center justify-center shadow-gold relative overflow-hidden">
                     <div className="absolute inset-0 animate-shimmer" />
-                    <div className="relative z-10 text-center">
-                      <div className="font-display text-7xl font-bold text-gold-foreground">
-                        {BRAND.initial}
-                      </div>
-                      <div className="font-mono text-xs text-gold-foreground/70 mt-1 tracking-widest uppercase">
-                        {BRAND.shortName}
-                      </div>
-                    </div>
+                    {/* Dark mark on the gold gradient — no screen-blend here
+                        (unlike the footer/navbar lockup): this asset is a
+                        solid black glyph meant to sit directly on a light
+                        surface, not a light logo meant to hide its own
+                        background against a dark one. */}
+                    <img
+                      src={inCircleLogo}
+                      alt={BRAND.shortName}
+                      className="relative z-10 w-36 h-36 object-contain"
+                    />
                   </div>
-                  <div className="absolute -inset-6 rounded-full border border-[oklch(0.2_0_0_/_30%)] animate-spin-slow" />
+                  <div className="absolute -inset-6 rounded-full border border-[rgba(200,162,74,0.30)] animate-spin-slow" />
                   <div
-                    className="absolute -inset-12 rounded-full border border-dashed border-[oklch(0.2_0_0_/_15%)] animate-spin-slow"
+                    className="absolute -inset-12 rounded-full border border-dashed border-[rgba(200,162,74,0.15)] animate-spin-slow"
                     style={{
                       animationDirection: "reverse",
                       animationDuration: "30s",
@@ -218,7 +225,7 @@ function Home() {
                 style={{ animationDelay: "-2s" }}
               >
                 <div className="text-muted-foreground">{BRAND.symbol}/USD</div>
-                <div className="flex items-center gap-1 text-[oklch(0.72_0.18_150)] font-semibold">
+                <div className="flex items-center gap-1 text-[var(--success)] font-semibold">
                   <TrendingUp className="w-3 h-3" />
                   $0.124
                 </div>
@@ -238,7 +245,7 @@ function Home() {
               key={i}
               className="font-display text-xl text-muted-foreground/60 hover:text-foreground transition flex items-center gap-3"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.2_0_0)]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold-lift)]" />
               {p}
             </div>
           ))}
@@ -270,7 +277,7 @@ function Home() {
                     href={s.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-xl font-semibold text-[oklch(0.2_0_0)] hover:underline flex items-center gap-2"
+                    className="font-mono text-xl font-semibold text-[var(--gold-lift)] hover:underline flex items-center gap-2"
                   >
                     {s.value} <ExternalLink className="w-3.5 h-3.5" />
                   </a>
@@ -291,7 +298,7 @@ function Home() {
       {/* How it works — 3-step flow: Join Block Label → Stake → Receive Token */}
       <Section className="py-24">
         <div className="max-w-2xl">
-          <div className="text-xs uppercase tracking-[0.2em] text-[oklch(0.2_0_0)] mb-3">
+          <div className="text-xs uppercase tracking-[0.2em] text-[var(--gold-lift)] mb-3">
             {t("Get Started")}
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold mb-3">
@@ -322,8 +329,8 @@ function Home() {
               <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-gold text-gold-foreground font-bold text-sm flex items-center justify-center shadow-gold">
                 {s.step}
               </div>
-              <div className="w-14 h-14 rounded-xl bg-[oklch(0.2_0_0_/_10%)] border border-[oklch(0.2_0_0_/_20%)] flex items-center justify-center group-hover:scale-110 transition">
-                <s.icon className="w-6 h-6 text-[oklch(0.2_0_0)]" />
+              <div className="w-14 h-14 rounded-xl bg-[rgba(200,162,74,0.10)] border border-[rgba(200,162,74,0.20)] flex items-center justify-center group-hover:scale-110 transition">
+                <s.icon className="w-6 h-6 text-[var(--gold-lift)]" />
               </div>
               <h3 className="mt-5 text-xl font-semibold">{t(s.title)}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{t(s.desc)}</p>
@@ -332,7 +339,7 @@ function Home() {
                   href={s.action}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-[oklch(0.2_0_0)] hover:underline"
+                  className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-[var(--gold-lift)] hover:underline"
                 >
                   {t("Open")} <ExternalLink className="w-3 h-3" />
                 </a>
@@ -344,7 +351,7 @@ function Home() {
 
       {/* Why Choose Us — 4 feature cards */}
       <Section className="py-24">
-        <div className="text-xs uppercase tracking-[0.2em] text-[oklch(0.2_0_0)] mb-3">
+        <div className="text-xs uppercase tracking-[0.2em] text-[var(--gold-lift)] mb-3">
           {t("Why Us")}
         </div>
         <h2 className="text-4xl md:text-5xl font-semibold mb-12 max-w-2xl">
@@ -374,7 +381,7 @@ function Home() {
             },
           ].map((f) => (
             <Card key={f.title} className="hover-lift group">
-              <f.icon className="w-7 h-7 text-[oklch(0.2_0_0)] group-hover:scale-110 transition" />
+              <f.icon className="w-7 h-7 text-[var(--gold-lift)] group-hover:scale-110 transition" />
               <h3 className="mt-4 font-semibold">{t(f.title)}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{t(f.desc)}</p>
             </Card>
@@ -384,14 +391,14 @@ function Home() {
 
       {/* Roadmap */}
       <Section className="py-24">
-        <div className="text-xs uppercase tracking-[0.2em] text-[oklch(0.2_0_0)] mb-3">
+        <div className="text-xs uppercase tracking-[0.2em] text-[var(--gold-lift)] mb-3">
           {t("The Path")}
         </div>
         <h2 className="text-4xl md:text-5xl font-semibold mb-12">
           {t("Roadmap")}
         </h2>
         <div className="grid md:grid-cols-3 gap-6 relative">
-          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-[oklch(0.2_0_0_/_50%)] to-transparent" />
+          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-[rgba(200,162,74,0.50)] to-transparent" />
           {[
             {
               phase: "Phase 1",
@@ -417,11 +424,11 @@ function Home() {
           ].map((p) => (
             <Card
               key={p.phase}
-              className={`hover-lift relative ${p.status === "active" ? "border-[oklch(0.2_0_0_/_50%)] shadow-gold" : ""}`}
+              className={`hover-lift relative ${p.status === "active" ? "border-[rgba(200,162,74,0.50)] shadow-gold" : ""}`}
             >
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <p.icon
-                  className={`w-4 h-4 ${p.status === "active" ? "animate-spin text-[oklch(0.2_0_0)]" : p.status === "done" ? "text-[oklch(0.72_0.18_150)]" : ""}`}
+                  className={`w-4 h-4 ${p.status === "active" ? "animate-spin text-[var(--gold-lift)]" : p.status === "done" ? "text-[var(--success)]" : ""}`}
                 />
                 {t(p.phase)}
               </div>

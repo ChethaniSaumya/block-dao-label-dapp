@@ -43,12 +43,12 @@ function Language() {
           <button
             key={l.code}
             onClick={() => setLang(l.code)}
-            className={`text-left rounded-xl border p-6 transition ${lang === l.code ? "border-[oklch(0.2_0_0)] shadow-gold bg-card" : "border-border bg-card hover:border-[oklch(0.2_0_0_/_40%)]"}`}
+            className={`text-left rounded-xl border p-6 transition ${lang === l.code ? "border-[var(--gold-lift)] shadow-gold bg-card" : "border-border bg-card hover:border-[rgba(200,162,74,0.40)]"}`}
           >
             <div className="flex items-center justify-between">
               <span className="text-4xl">{l.flag}</span>
               {lang === l.code && (
-                <Check className="w-5 h-5 text-[oklch(0.2_0_0)]" />
+                <Check className="w-5 h-5 text-[var(--gold-lift)]" />
               )}
             </div>
             <div className="mt-4 font-display text-xl font-semibold">

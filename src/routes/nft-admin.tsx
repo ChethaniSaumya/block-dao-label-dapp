@@ -74,7 +74,7 @@ function Field({
 
 function StatTile({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
-    <div className="p-4 rounded-lg bg-secondary">
+    <div className="p-4 rounded-lg tile">
       <div className="text-xs text-muted-foreground">{label}</div>
       <div className="font-display text-2xl font-semibold mt-1">{value}</div>
       {sub && <div className="text-[11px] text-muted-foreground mt-0.5">{sub}</div>}
@@ -349,7 +349,8 @@ function NftAdmin() {
     <Section className="py-12">
       <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight">
+          <div className="eyebrow mb-1.5">{t("Issuing Authority")}</div>
+          <h1 className="font-engraved text-3xl font-medium">
             {t("NFT Certificate Operations")}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">

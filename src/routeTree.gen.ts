@@ -20,6 +20,25 @@ import { Route as AirdropRouteImport } from "./routes/airdrop";
 import { Route as NftAdminRouteImport } from "./routes/nft-admin";
 import { Route as CertificatesRouteImport } from "./routes/certificates";
 import { Route as AdminRouteImport } from "./routes/admin";
+import { Route as BusinessRouteImport } from "./routes/business";
+import { Route as TechnologyRouteImport } from "./routes/technology";
+import { Route as ContentRouteImport } from "./routes/content";
+import { Route as CareersRouteImport } from "./routes/careers";
+import { Route as DealersRouteImport } from "./routes/dealers";
+import { Route as TokenRouteImport } from "./routes/token";
+import { Route as NewsRouteImport } from "./routes/news";
+import { Route as NoticesRouteImport } from "./routes/notices";
+import { Route as ContactRouteImport } from "./routes/contact";
+import { Route as DealerInquiryRouteImport } from "./routes/dealer-inquiry";
+import { Route as TabletInquiryRouteImport } from "./routes/tablet-inquiry";
+import { Route as CareersAiInstructorRouteImport } from "./routes/careers-ai-instructor";
+import { Route as CareersDancersChoreographersRouteImport } from "./routes/careers-dancers-choreographers";
+import { Route as CareersAiVideoContentCreatorRouteImport } from "./routes/careers-ai-video-content-creator";
+import { Route as CareersActorsRouteImport } from "./routes/careers-actors";
+import { Route as NewsMoripeSamsungB2bRouteImport } from "./routes/news-moripe-samsung-b2b";
+import { Route as NewsDellaBalladProjectRouteImport } from "./routes/news-della-ballad-project";
+import { Route as NoticesDemoSourcingRouteImport } from "./routes/notices-demo-sourcing";
+import { Route as NoticesWebsiteLaunchRouteImport } from "./routes/notices-website-launch";
 import { Route as AboutRouteImport } from "./routes/about";
 import { Route as IndexRouteImport } from "./routes/index";
 
@@ -74,6 +93,101 @@ const AdminRoute = AdminRouteImport.update({
   path: "/admin",
   getParentRoute: () => rootRouteImport,
 } as any);
+const BusinessRoute = BusinessRouteImport.update({
+  id: "/business",
+  path: "/business",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const TechnologyRoute = TechnologyRouteImport.update({
+  id: "/technology",
+  path: "/technology",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const ContentRoute = ContentRouteImport.update({
+  id: "/content",
+  path: "/content",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const CareersRoute = CareersRouteImport.update({
+  id: "/careers",
+  path: "/careers",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const DealersRoute = DealersRouteImport.update({
+  id: "/dealers",
+  path: "/dealers",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const TokenRoute = TokenRouteImport.update({
+  id: "/token",
+  path: "/token",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const NewsRoute = NewsRouteImport.update({
+  id: "/news",
+  path: "/news",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const NoticesRoute = NoticesRouteImport.update({
+  id: "/notices",
+  path: "/notices",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const ContactRoute = ContactRouteImport.update({
+  id: "/contact",
+  path: "/contact",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const DealerInquiryRoute = DealerInquiryRouteImport.update({
+  id: "/dealer-inquiry",
+  path: "/dealer-inquiry",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const TabletInquiryRoute = TabletInquiryRouteImport.update({
+  id: "/tablet-inquiry",
+  path: "/tablet-inquiry",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const CareersAiInstructorRoute = CareersAiInstructorRouteImport.update({
+  id: "/careers/ai-instructor",
+  path: "/careers/ai-instructor",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const CareersDancersChoreographersRoute = CareersDancersChoreographersRouteImport.update({
+  id: "/careers/dancers-choreographers",
+  path: "/careers/dancers-choreographers",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const CareersAiVideoContentCreatorRoute = CareersAiVideoContentCreatorRouteImport.update({
+  id: "/careers/ai-video-content-creator",
+  path: "/careers/ai-video-content-creator",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const CareersActorsRoute = CareersActorsRouteImport.update({
+  id: "/careers/actors",
+  path: "/careers/actors",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const NewsMoripeSamsungB2bRoute = NewsMoripeSamsungB2bRouteImport.update({
+  id: "/news/moripe-samsung-b2b",
+  path: "/news/moripe-samsung-b2b",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const NewsDellaBalladProjectRoute = NewsDellaBalladProjectRouteImport.update({
+  id: "/news/della-ballad-project",
+  path: "/news/della-ballad-project",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const NoticesDemoSourcingRoute = NoticesDemoSourcingRouteImport.update({
+  id: "/notices/demo-sourcing",
+  path: "/notices/demo-sourcing",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const NoticesWebsiteLaunchRoute = NoticesWebsiteLaunchRouteImport.update({
+  id: "/notices/website-launch",
+  path: "/notices/website-launch",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const AboutRoute = AboutRouteImport.update({
   id: "/about",
   path: "/about",
@@ -87,6 +201,25 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute;
+  "/business": typeof BusinessRoute;
+  "/technology": typeof TechnologyRoute;
+  "/content": typeof ContentRoute;
+  "/careers": typeof CareersRoute;
+  "/dealers": typeof DealersRoute;
+  "/token": typeof TokenRoute;
+  "/news": typeof NewsRoute;
+  "/notices": typeof NoticesRoute;
+  "/contact": typeof ContactRoute;
+  "/dealer-inquiry": typeof DealerInquiryRoute;
+  "/tablet-inquiry": typeof TabletInquiryRoute;
+  "/careers/ai-instructor": typeof CareersAiInstructorRoute;
+  "/careers/dancers-choreographers": typeof CareersDancersChoreographersRoute;
+  "/careers/ai-video-content-creator": typeof CareersAiVideoContentCreatorRoute;
+  "/careers/actors": typeof CareersActorsRoute;
+  "/news/moripe-samsung-b2b": typeof NewsMoripeSamsungB2bRoute;
+  "/news/della-ballad-project": typeof NewsDellaBalladProjectRoute;
+  "/notices/demo-sourcing": typeof NoticesDemoSourcingRoute;
+  "/notices/website-launch": typeof NoticesWebsiteLaunchRoute;
   "/about": typeof AboutRoute;
   "/admin": typeof AdminRoute;
   "/airdrop": typeof AirdropRoute;
@@ -102,6 +235,25 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   "/": typeof IndexRoute;
+  "/business": typeof BusinessRoute;
+  "/technology": typeof TechnologyRoute;
+  "/content": typeof ContentRoute;
+  "/careers": typeof CareersRoute;
+  "/dealers": typeof DealersRoute;
+  "/token": typeof TokenRoute;
+  "/news": typeof NewsRoute;
+  "/notices": typeof NoticesRoute;
+  "/contact": typeof ContactRoute;
+  "/dealer-inquiry": typeof DealerInquiryRoute;
+  "/tablet-inquiry": typeof TabletInquiryRoute;
+  "/careers/ai-instructor": typeof CareersAiInstructorRoute;
+  "/careers/dancers-choreographers": typeof CareersDancersChoreographersRoute;
+  "/careers/ai-video-content-creator": typeof CareersAiVideoContentCreatorRoute;
+  "/careers/actors": typeof CareersActorsRoute;
+  "/news/moripe-samsung-b2b": typeof NewsMoripeSamsungB2bRoute;
+  "/news/della-ballad-project": typeof NewsDellaBalladProjectRoute;
+  "/notices/demo-sourcing": typeof NoticesDemoSourcingRoute;
+  "/notices/website-launch": typeof NoticesWebsiteLaunchRoute;
   "/about": typeof AboutRoute;
   "/admin": typeof AdminRoute;
   "/airdrop": typeof AirdropRoute;
@@ -118,6 +270,25 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport;
   "/": typeof IndexRoute;
+  "/business": typeof BusinessRoute;
+  "/technology": typeof TechnologyRoute;
+  "/content": typeof ContentRoute;
+  "/careers": typeof CareersRoute;
+  "/dealers": typeof DealersRoute;
+  "/token": typeof TokenRoute;
+  "/news": typeof NewsRoute;
+  "/notices": typeof NoticesRoute;
+  "/contact": typeof ContactRoute;
+  "/dealer-inquiry": typeof DealerInquiryRoute;
+  "/tablet-inquiry": typeof TabletInquiryRoute;
+  "/careers/ai-instructor": typeof CareersAiInstructorRoute;
+  "/careers/dancers-choreographers": typeof CareersDancersChoreographersRoute;
+  "/careers/ai-video-content-creator": typeof CareersAiVideoContentCreatorRoute;
+  "/careers/actors": typeof CareersActorsRoute;
+  "/news/moripe-samsung-b2b": typeof NewsMoripeSamsungB2bRoute;
+  "/news/della-ballad-project": typeof NewsDellaBalladProjectRoute;
+  "/notices/demo-sourcing": typeof NoticesDemoSourcingRoute;
+  "/notices/website-launch": typeof NoticesWebsiteLaunchRoute;
   "/about": typeof AboutRoute;
   "/admin": typeof AdminRoute;
   "/airdrop": typeof AirdropRoute;
@@ -135,6 +306,25 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
     | "/"
+    | "/business"
+    | "/technology"
+    | "/content"
+    | "/careers"
+    | "/dealers"
+    | "/token"
+    | "/news"
+    | "/notices"
+    | "/contact"
+    | "/dealer-inquiry"
+    | "/tablet-inquiry"
+    | "/careers/ai-instructor"
+    | "/careers/dancers-choreographers"
+    | "/careers/ai-video-content-creator"
+    | "/careers/actors"
+    | "/news/moripe-samsung-b2b"
+    | "/news/della-ballad-project"
+    | "/notices/demo-sourcing"
+    | "/notices/website-launch"
     | "/about"
     | "/admin"
     | "/airdrop"
@@ -150,6 +340,25 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo;
   to:
     | "/"
+    | "/business"
+    | "/technology"
+    | "/content"
+    | "/careers"
+    | "/dealers"
+    | "/token"
+    | "/news"
+    | "/notices"
+    | "/contact"
+    | "/dealer-inquiry"
+    | "/tablet-inquiry"
+    | "/careers/ai-instructor"
+    | "/careers/dancers-choreographers"
+    | "/careers/ai-video-content-creator"
+    | "/careers/actors"
+    | "/news/moripe-samsung-b2b"
+    | "/news/della-ballad-project"
+    | "/notices/demo-sourcing"
+    | "/notices/website-launch"
     | "/about"
     | "/admin"
     | "/airdrop"
@@ -165,6 +374,25 @@ export interface FileRouteTypes {
   id:
     | "__root__"
     | "/"
+    | "/business"
+    | "/technology"
+    | "/content"
+    | "/careers"
+    | "/dealers"
+    | "/token"
+    | "/news"
+    | "/notices"
+    | "/contact"
+    | "/dealer-inquiry"
+    | "/tablet-inquiry"
+    | "/careers/ai-instructor"
+    | "/careers/dancers-choreographers"
+    | "/careers/ai-video-content-creator"
+    | "/careers/actors"
+    | "/news/moripe-samsung-b2b"
+    | "/news/della-ballad-project"
+    | "/notices/demo-sourcing"
+    | "/notices/website-launch"
     | "/about"
     | "/admin"
     | "/airdrop"
@@ -181,6 +409,25 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
+  BusinessRoute: typeof BusinessRoute;
+  TechnologyRoute: typeof TechnologyRoute;
+  ContentRoute: typeof ContentRoute;
+  CareersRoute: typeof CareersRoute;
+  DealersRoute: typeof DealersRoute;
+  TokenRoute: typeof TokenRoute;
+  NewsRoute: typeof NewsRoute;
+  NoticesRoute: typeof NoticesRoute;
+  ContactRoute: typeof ContactRoute;
+  DealerInquiryRoute: typeof DealerInquiryRoute;
+  TabletInquiryRoute: typeof TabletInquiryRoute;
+  CareersAiInstructorRoute: typeof CareersAiInstructorRoute;
+  CareersDancersChoreographersRoute: typeof CareersDancersChoreographersRoute;
+  CareersAiVideoContentCreatorRoute: typeof CareersAiVideoContentCreatorRoute;
+  CareersActorsRoute: typeof CareersActorsRoute;
+  NewsMoripeSamsungB2bRoute: typeof NewsMoripeSamsungB2bRoute;
+  NewsDellaBalladProjectRoute: typeof NewsDellaBalladProjectRoute;
+  NoticesDemoSourcingRoute: typeof NoticesDemoSourcingRoute;
+  NoticesWebsiteLaunchRoute: typeof NoticesWebsiteLaunchRoute;
   AboutRoute: typeof AboutRoute;
   AdminRoute: typeof AdminRoute;
   AirdropRoute: typeof AirdropRoute;
@@ -268,6 +515,139 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof AdminRouteImport;
       parentRoute: typeof rootRouteImport;
     };
+    "/business": {
+      id: "/business";
+      path: "/business";
+      fullPath: "/business";
+      preLoaderRoute: typeof BusinessRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/technology": {
+      id: "/technology";
+      path: "/technology";
+      fullPath: "/technology";
+      preLoaderRoute: typeof TechnologyRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/content": {
+      id: "/content";
+      path: "/content";
+      fullPath: "/content";
+      preLoaderRoute: typeof ContentRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/careers": {
+      id: "/careers";
+      path: "/careers";
+      fullPath: "/careers";
+      preLoaderRoute: typeof CareersRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/dealers": {
+      id: "/dealers";
+      path: "/dealers";
+      fullPath: "/dealers";
+      preLoaderRoute: typeof DealersRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/token": {
+      id: "/token";
+      path: "/token";
+      fullPath: "/token";
+      preLoaderRoute: typeof TokenRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/news": {
+      id: "/news";
+      path: "/news";
+      fullPath: "/news";
+      preLoaderRoute: typeof NewsRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/notices": {
+      id: "/notices";
+      path: "/notices";
+      fullPath: "/notices";
+      preLoaderRoute: typeof NoticesRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/contact": {
+      id: "/contact";
+      path: "/contact";
+      fullPath: "/contact";
+      preLoaderRoute: typeof ContactRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/dealer-inquiry": {
+      id: "/dealer-inquiry";
+      path: "/dealer-inquiry";
+      fullPath: "/dealer-inquiry";
+      preLoaderRoute: typeof DealerInquiryRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/tablet-inquiry": {
+      id: "/tablet-inquiry";
+      path: "/tablet-inquiry";
+      fullPath: "/tablet-inquiry";
+      preLoaderRoute: typeof TabletInquiryRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/careers/ai-instructor": {
+      id: "/careers/ai-instructor";
+      path: "/careers/ai-instructor";
+      fullPath: "/careers/ai-instructor";
+      preLoaderRoute: typeof CareersAiInstructorRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/careers/dancers-choreographers": {
+      id: "/careers/dancers-choreographers";
+      path: "/careers/dancers-choreographers";
+      fullPath: "/careers/dancers-choreographers";
+      preLoaderRoute: typeof CareersDancersChoreographersRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/careers/ai-video-content-creator": {
+      id: "/careers/ai-video-content-creator";
+      path: "/careers/ai-video-content-creator";
+      fullPath: "/careers/ai-video-content-creator";
+      preLoaderRoute: typeof CareersAiVideoContentCreatorRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/careers/actors": {
+      id: "/careers/actors";
+      path: "/careers/actors";
+      fullPath: "/careers/actors";
+      preLoaderRoute: typeof CareersActorsRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/news/moripe-samsung-b2b": {
+      id: "/news/moripe-samsung-b2b";
+      path: "/news/moripe-samsung-b2b";
+      fullPath: "/news/moripe-samsung-b2b";
+      preLoaderRoute: typeof NewsMoripeSamsungB2bRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/news/della-ballad-project": {
+      id: "/news/della-ballad-project";
+      path: "/news/della-ballad-project";
+      fullPath: "/news/della-ballad-project";
+      preLoaderRoute: typeof NewsDellaBalladProjectRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/notices/demo-sourcing": {
+      id: "/notices/demo-sourcing";
+      path: "/notices/demo-sourcing";
+      fullPath: "/notices/demo-sourcing";
+      preLoaderRoute: typeof NoticesDemoSourcingRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/notices/website-launch": {
+      id: "/notices/website-launch";
+      path: "/notices/website-launch";
+      fullPath: "/notices/website-launch";
+      preLoaderRoute: typeof NoticesWebsiteLaunchRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/about": {
       id: "/about";
       path: "/about";
@@ -287,6 +667,25 @@ declare module "@tanstack/react-router" {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BusinessRoute: BusinessRoute,
+  TechnologyRoute: TechnologyRoute,
+  ContentRoute: ContentRoute,
+  CareersRoute: CareersRoute,
+  DealersRoute: DealersRoute,
+  TokenRoute: TokenRoute,
+  NewsRoute: NewsRoute,
+  NoticesRoute: NoticesRoute,
+  ContactRoute: ContactRoute,
+  DealerInquiryRoute: DealerInquiryRoute,
+  TabletInquiryRoute: TabletInquiryRoute,
+  CareersAiInstructorRoute: CareersAiInstructorRoute,
+  CareersDancersChoreographersRoute: CareersDancersChoreographersRoute,
+  CareersAiVideoContentCreatorRoute: CareersAiVideoContentCreatorRoute,
+  CareersActorsRoute: CareersActorsRoute,
+  NewsMoripeSamsungB2bRoute: NewsMoripeSamsungB2bRoute,
+  NewsDellaBalladProjectRoute: NewsDellaBalladProjectRoute,
+  NoticesDemoSourcingRoute: NoticesDemoSourcingRoute,
+  NoticesWebsiteLaunchRoute: NoticesWebsiteLaunchRoute,
   AboutRoute: AboutRoute,
   AdminRoute: AdminRoute,
   AirdropRoute: AirdropRoute,
