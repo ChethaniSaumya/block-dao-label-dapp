@@ -125,17 +125,14 @@ export function Navbar() {
     auth();
   }, [isConnected, address, jwt, _hasHydrated, signMessageAsync, setJwt, t]);
   return (
-    <header className="sticky top-0 z-50 glass border-b">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5">
+    <header className="sticky top-0 z-50 glass border-b border-border">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+        <Link to="/" className="flex items-center" aria-label={BRAND.foundation}>
           <img
             src={BRAND.logo}
             alt={BRAND.foundation}
-            className="h-9 w-9 object-contain"
+            className="h-20 w-auto object-contain mix-blend-screen"
           />
-          <span className="font-display text-xl font-semibold tracking-tight">
-            {BRAND.shortName}
-          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -144,11 +141,15 @@ export function Navbar() {
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              activeProps={{ className: "text-foreground bg-secondary" }}
-              inactiveProps={{
-                className: "text-muted-foreground hover:text-foreground",
+              activeProps={{
+                className:
+                  "text-gold-lift border-[rgba(200,162,74,0.34)] bg-[rgba(200,162,74,0.08)]",
               }}
-              className="px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              inactiveProps={{
+                className:
+                  "text-muted-foreground border-transparent hover:text-gold-lift",
+              }}
+              className="px-3 py-2 rounded-md border text-sm font-medium tracking-[0.04em] transition-colors"
             >
               {t(l.label)}
             </Link>
@@ -158,27 +159,42 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setLang(lang === "en" ? "kr" : "en")}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-2 text-sm rounded-md border border-border hover:bg-secondary transition-colors"
+            title="English / 한국어"
+            className="hidden sm:flex items-center gap-1.5 px-3 py-2 text-sm rounded-md border border-border text-muted-foreground hover:text-gold-lift hover:border-[rgba(200,162,74,0.34)] transition-colors"
           >
             <Languages className="w-4 h-4" />
             {lang === "en" ? "EN" : "한국어"}
           </button>
-          <NavWalletButton className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gradient-gold text-gold-foreground font-semibold text-sm shadow-gold hover:opacity-90 transition" />
+          <NavWalletButton className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gradient-gold text-gold-foreground font-semibold text-sm tracking-[0.02em] shadow-gold hover:brightness-110 transition" />
           <button className="lg:hidden p-2" onClick={() => setOpen(!open)}>
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {open && (
-        <div className="lg:hidden border-t border-border bg-card">
+      {/*
+        Always mounted (never `{open && ...}`) so the height change has
+        something to transition between. `grid-rows-[0fr|1fr]` animates to an
+        intrinsic height smoothly — plain `max-height` either cuts content off
+        early or leaves a long tail of dead transition time — and the inner
+        `overflow-hidden` wrapper clips the content while it's collapsing.
+      */}
+      <div
+        aria-hidden={!open}
+        className={`lg:hidden plate grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
+          open
+            ? "grid-rows-[1fr] opacity-100 border-t border-border"
+            : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
           <div className="px-4 py-3 space-y-1">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="block px-3 py-2 rounded-md text-sm hover:bg-secondary"
+                className="block px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-gold-lift hover:bg-[rgba(200,162,74,0.08)]"
               >
                 {t(l.label)}
               </Link>
@@ -190,11 +206,11 @@ export function Navbar() {
               >
                 {lang === "en" ? "EN" : "한국어"}
               </button>
-              <NavWalletButton className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md bg-gradient-gold text-gold-foreground font-semibold text-sm" />
+              <NavWalletButton className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md bg-gradient-gold text-gold-foreground font-semibold text-sm tracking-[0.02em]" />
             </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
