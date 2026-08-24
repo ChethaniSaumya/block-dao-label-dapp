@@ -65,7 +65,7 @@ const facts: {
   { label: "Contract", value: "TBA at TGE", icon: Shield },
 ];
 
-// BDL token allocation — per the Block DAO Label Token Issuance Plan (10B fixed).
+// BDF token allocation — per the Block DAO Foundation Token Issuance Plan (10B fixed).
 const allocation = [
   { cat: "Fan DAO Community", pct: 25, amount: "2,500,000,000" },
   { cat: "Creator DAO", pct: 25, amount: "2,500,000,000" },
@@ -125,7 +125,7 @@ const bscPoints = [
   {
     icon: Layers,
     title: "BEP-20 standard token issuance",
-    body: "Issuing the BDL token under the BSC standard ensures broad compatibility and liquidity.",
+    body: "Issuing the BDF token under the BSC standard ensures broad compatibility and liquidity.",
   },
   {
     icon: Blocks,
@@ -233,7 +233,7 @@ function About() {
         </h2>
         <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-3xl">
           {t(
-            "The BDL token is a BEP-20 asset issued on the BSC (Binance Smart Chain) network. Block Label leverages BSC's high throughput, low fees, and proven security to bring entertainment IP and the fan economy on-chain — contributing to the expansion of real-world use cases within the BSC ecosystem.",
+            "The BDF token is a BEP-20 asset issued on the BSC (Binance Smart Chain) network. Block Label leverages BSC's high throughput, low fees, and proven security to bring entertainment IP and the fan economy on-chain — contributing to the expansion of real-world use cases within the BSC ecosystem.",
           )}
         </p>
         <div className="mt-6 grid sm:grid-cols-3 gap-4">
@@ -294,11 +294,11 @@ function About() {
                 rel="noopener noreferrer"
                 className="mt-2 font-display text-lg font-semibold text-[var(--gold-lift)] hover:underline flex items-center gap-1.5"
               >
-                {f.value} <ExternalLink className="w-3.5 h-3.5" />
+                {t(f.value)} <ExternalLink className="w-3.5 h-3.5" />
               </a>
             ) : (
               <div className="mt-2 font-display text-lg font-semibold">
-                {f.value}
+                {t(f.value)}
               </div>
             )}
           </Card>

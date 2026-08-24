@@ -40,11 +40,11 @@ import {
   ADDR,
   teamLockupAbi,
   erc20Abi,
-  BDL_DECIMALS,
+  BDF_DECIMALS,
 } from "@/lib/contracts";
 
 const bdl = (v: bigint | undefined) =>
-  v === undefined ? "0" : Number(formatUnits(v, BDL_DECIMALS)).toLocaleString();
+  v === undefined ? "0" : Number(formatUnits(v, BDF_DECIMALS)).toLocaleString();
 
 // Round 1 flat reward per the whitepaper's Early-Bird tier — used as a dashboard
 // estimate; the exact per-wallet claim (with proof) lives on the /airdrop page.
@@ -162,7 +162,7 @@ function Dashboard() {
       icon: Wallet,
       label: "{{SYMBOL}} Balance",
       value: bdlBalance !== undefined
-        ? Number(formatUnits(bdlBalance as bigint, BDL_DECIMALS)).toLocaleString(undefined, { maximumFractionDigits: 2 })
+        ? Number(formatUnits(bdlBalance as bigint, BDF_DECIMALS)).toLocaleString(undefined, { maximumFractionDigits: 2 })
         : "—",
       suffix: BRAND.symbol,
     },

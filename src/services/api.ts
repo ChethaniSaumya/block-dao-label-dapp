@@ -163,9 +163,9 @@ export interface AirdropStatus {
   threshold: string;
   thresholdFormatted: string;
   rewardAmount: number;
-  /** Source of eligibility: "BDLStaking" (540-day lock) or legacy Block Label credit. */
+  /** Source of eligibility: "BDFStaking" (540-day lock) or legacy Block Label credit. */
   source?: string;
-  /** Raw BDL staked (when using the staking contract). */
+  /** Raw BDF staked (when using the staking contract). */
   stakedWkeyDao2?: string;
   /** Global stake order (drives airdrop round / early-bird tier). */
   stakeSequence?: number;
@@ -181,7 +181,7 @@ export async function getAirdropStatus(
   return request(`/api/airdrop/status/${address}`);
 }
 
-// ─── Airdrop Merkle claim (BDLAirdropDistributor) ───
+// ─── Airdrop Merkle claim (BDFAirdropDistributor) ───
 
 export interface AirdropProof {
   round: number;

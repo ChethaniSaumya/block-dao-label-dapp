@@ -22,7 +22,7 @@ import { Route as CertificatesRouteImport } from "./routes/certificates";
 import { Route as AdminRouteImport } from "./routes/admin";
 import { Route as BusinessRouteImport } from "./routes/business";
 import { Route as TechnologyRouteImport } from "./routes/technology";
-import { Route as ContentRouteImport } from "./routes/content";
+import { Route as RoadmapRouteImport } from "./routes/roadmap";
 import { Route as CareersRouteImport } from "./routes/careers";
 import { Route as DealersRouteImport } from "./routes/dealers";
 import { Route as TokenRouteImport } from "./routes/token";
@@ -103,9 +103,9 @@ const TechnologyRoute = TechnologyRouteImport.update({
   path: "/technology",
   getParentRoute: () => rootRouteImport,
 } as any);
-const ContentRoute = ContentRouteImport.update({
-  id: "/content",
-  path: "/content",
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: "/roadmap",
+  path: "/roadmap",
   getParentRoute: () => rootRouteImport,
 } as any);
 const CareersRoute = CareersRouteImport.update({
@@ -203,7 +203,7 @@ export interface FileRoutesByFullPath {
   "/": typeof IndexRoute;
   "/business": typeof BusinessRoute;
   "/technology": typeof TechnologyRoute;
-  "/content": typeof ContentRoute;
+  "/roadmap": typeof RoadmapRoute;
   "/careers": typeof CareersRoute;
   "/dealers": typeof DealersRoute;
   "/token": typeof TokenRoute;
@@ -237,7 +237,7 @@ export interface FileRoutesByTo {
   "/": typeof IndexRoute;
   "/business": typeof BusinessRoute;
   "/technology": typeof TechnologyRoute;
-  "/content": typeof ContentRoute;
+  "/roadmap": typeof RoadmapRoute;
   "/careers": typeof CareersRoute;
   "/dealers": typeof DealersRoute;
   "/token": typeof TokenRoute;
@@ -272,7 +272,7 @@ export interface FileRoutesById {
   "/": typeof IndexRoute;
   "/business": typeof BusinessRoute;
   "/technology": typeof TechnologyRoute;
-  "/content": typeof ContentRoute;
+  "/roadmap": typeof RoadmapRoute;
   "/careers": typeof CareersRoute;
   "/dealers": typeof DealersRoute;
   "/token": typeof TokenRoute;
@@ -308,7 +308,7 @@ export interface FileRouteTypes {
     | "/"
     | "/business"
     | "/technology"
-    | "/content"
+    | "/roadmap"
     | "/careers"
     | "/dealers"
     | "/token"
@@ -342,7 +342,7 @@ export interface FileRouteTypes {
     | "/"
     | "/business"
     | "/technology"
-    | "/content"
+    | "/roadmap"
     | "/careers"
     | "/dealers"
     | "/token"
@@ -376,7 +376,7 @@ export interface FileRouteTypes {
     | "/"
     | "/business"
     | "/technology"
-    | "/content"
+    | "/roadmap"
     | "/careers"
     | "/dealers"
     | "/token"
@@ -411,7 +411,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
   BusinessRoute: typeof BusinessRoute;
   TechnologyRoute: typeof TechnologyRoute;
-  ContentRoute: typeof ContentRoute;
+  RoadmapRoute: typeof RoadmapRoute;
   CareersRoute: typeof CareersRoute;
   DealersRoute: typeof DealersRoute;
   TokenRoute: typeof TokenRoute;
@@ -529,11 +529,11 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof TechnologyRouteImport;
       parentRoute: typeof rootRouteImport;
     };
-    "/content": {
-      id: "/content";
-      path: "/content";
-      fullPath: "/content";
-      preLoaderRoute: typeof ContentRouteImport;
+    "/roadmap": {
+      id: "/roadmap";
+      path: "/roadmap";
+      fullPath: "/roadmap";
+      preLoaderRoute: typeof RoadmapRouteImport;
       parentRoute: typeof rootRouteImport;
     };
     "/careers": {
@@ -669,7 +669,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BusinessRoute: BusinessRoute,
   TechnologyRoute: TechnologyRoute,
-  ContentRoute: ContentRoute,
+  RoadmapRoute: RoadmapRoute,
   CareersRoute: CareersRoute,
   DealersRoute: DealersRoute,
   TokenRoute: TokenRoute,

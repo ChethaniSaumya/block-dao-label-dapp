@@ -88,35 +88,35 @@
   :root {
     --radius: 0.5rem;
 
-    /* Gold foil — the accent, drawn from the certificate's frame and seal. */
-    --brand: #C8A24A;
-    --brand-strong: #8A6B22;
-    --brand-foreground: #120E04;
-    --gold: #C8A24A;
-    --gold-lift: #E9CE86;
-    --gold-deep: #8A6B22;
-    --gold-foreground: #120E04;
+    /* Copper foil — the accent, drawn from the new logo. */
+    --brand: #C74A01;
+    --brand-strong: #822901;
+    --brand-foreground: #FFFFFF;
+    --gold: #C74A01;
+    --gold-lift: #F07A31;
+    --gold-deep: #822901;
+    --gold-foreground: #FFFFFF;
 
-    /* Deep navy ground. Gold only reads as metal against a dark field. */
-    --background: #070C18;
-    --foreground: #ECE4D2;
+    /* Pure black ground. Copper reads powerfully against a true black field. */
+    --background: #030303;
+    --foreground: #F5F5F5;
 
-    --card: #0E1728;
-    --card-foreground: #ECE4D2;
+    --card: #0A0A0A;
+    --card-foreground: #F5F5F5;
 
-    --popover: #0B1222;
-    --popover-foreground: #ECE4D2;
+    --popover: #080808;
+    --popover-foreground: #F5F5F5;
 
     --primary: var(--brand);
     --primary-foreground: var(--brand-foreground);
 
-    --secondary: #142038;
-    --secondary-foreground: #ECE4D2;
+    --secondary: #141414;
+    --secondary-foreground: #F5F5F5;
 
-    --muted: #101B2F;
-    --muted-foreground: #94A1B8;
+    --muted: #1A1A1A;
+    --muted-foreground: #A1A1AA;
 
-    --accent: #142038;
+    --accent: #141414;
     --accent-foreground: var(--gold-lift);
 
     --destructive: #C4574A;
@@ -126,38 +126,38 @@
     --warning: #D9A63C;
 
     /* Hairlines, never heavy borders. */
-    --border: rgba(200, 162, 74, 0.16);
-    --input: #101B2F;
+    --border: rgba(199, 74, 1, 0.2);
+    --input: #1A1A1A;
     --ring: var(--gold);
 
     /* Foil sheen — a real gradient, not a flat fill. */
     --gradient-gold: linear-gradient(
       135deg,
-      #8A6B22 0%,
-      #E9CE86 34%,
-      #C8A24A 52%,
-      #F5E6B8 70%,
-      #8A6B22 100%
+      #822901 0%,
+      #F07A31 34%,
+      #C74A01 52%,
+      #FFB085 70%,
+      #822901 100%
     );
     /* Warm gold from the top, a faint blue counterpoint at upper right, and a
        second, quieter gold echo at the lower left so the wash doesn't read as
        a single hero spotlight when it scrolls under page content below. */
     --gradient-hero:
-      radial-gradient(ellipse 80% 55% at 50% -10%, rgba(200, 162, 74, 0.17), transparent 62%),
+      radial-gradient(ellipse 80% 55% at 50% -10%, rgba(199, 74, 1, 0.17), transparent 62%),
       radial-gradient(ellipse 60% 45% at 88% 12%, rgba(60, 110, 190, 0.12), transparent 66%),
-      radial-gradient(ellipse 60% 45% at 8% 96%, rgba(200, 162, 74, 0.07), transparent 68%);
+      radial-gradient(ellipse 60% 45% at 8% 96%, rgba(199, 74, 1, 0.07), transparent 68%);
 
     /* Elevation is a glow on dark, never a drop shadow. */
-    --shadow-gold: 0 0 0 1px rgba(200, 162, 74, 0.18), 0 18px 46px -22px rgba(200, 162, 74, 0.45);
-    --shadow-elegant: 0 1px 0 0 rgba(200, 162, 74, 0.08) inset, 0 24px 60px -34px rgba(0, 0, 0, 0.9);
+    --shadow-gold: 0 0 0 1px rgba(199, 74, 1, 0.18), 0 18px 46px -22px rgba(199, 74, 1, 0.45);
+    --shadow-elegant: 0 1px 0 0 rgba(199, 74, 1, 0.08) inset, 0 24px 60px -34px rgba(0, 0, 0, 0.9);
 
-    --sidebar-background: #0B1222;
-    --sidebar-foreground: #ECE4D2;
+    --sidebar-background: #080808;
+    --sidebar-foreground: #F5F5F5;
     --sidebar-primary: var(--brand);
     --sidebar-primary-foreground: var(--brand-foreground);
-    --sidebar-accent: #142038;
+    --sidebar-accent: #141414;
     --sidebar-accent-foreground: var(--gold-lift);
-    --sidebar-border: rgba(200, 162, 74, 0.16);
+    --sidebar-border: rgba(199, 74, 1, 0.2);
     --sidebar-ring: var(--gold);
   }
 }
@@ -239,9 +239,9 @@
     box-shadow: var(--shadow-elegant);
   }
   .glass {
-    background: rgba(7, 12, 24, 0.82);
+    background: rgba(5, 5, 5, 0.82);
     backdrop-filter: blur(14px);
-    border: 1px solid rgba(200, 162, 74, 0.16);
+    border: 1px solid rgba(199, 74, 1, 0.2);
   }
 
   /* ── Certificate devices ─────────────────────────────────────────── */
@@ -308,7 +308,7 @@
      defines its own ::before/::after later in this file and would overwrite
      these rules on the same element. Applied to real child divs instead. */
   .hero-bg {
-    background-image: url("/hero-bg.png");
+    background-image: url("./assets/bg.png");
     background-size: cover;
     background-position: center 38%;
     background-repeat: no-repeat;
@@ -345,8 +345,8 @@
      of running off like graph paper. */
   .grid-page {
     background-image:
-      linear-gradient(rgba(200, 162, 74, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200, 162, 74, 0.08) 1px, transparent 1px);
+      linear-gradient(rgba(199, 74, 1, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(199, 74, 1, 0.08) 1px, transparent 1px);
     background-size: 72px 72px;
     /* Weighted to the right edge and fading out to the left, so the mesh reads
        as light falling across the page rather than uniform graph paper. The
@@ -393,10 +393,10 @@
     background:
       radial-gradient(
         ellipse 70% 130% at 50% 0%,
-        rgba(200, 162, 74, 0.07),
+        rgba(199, 74, 1, 0.07),
         transparent 68%
       ),
-      linear-gradient(180deg, rgba(20, 32, 56, 0.72) 0%, var(--background) 62%);
+      linear-gradient(180deg, rgba(20, 20, 20, 0.72) 0%, var(--background) 62%);
   }
   .footer-luxe::before {
     content: "";
@@ -406,7 +406,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(200, 162, 74, 0.55),
+      rgba(199, 74, 1, 0.55),
       transparent
     );
   }
@@ -420,9 +420,9 @@
        leaves nothing visible at these sizes. */
     background: radial-gradient(
       circle,
-      rgba(255, 249, 232, 1) 0%,
-      rgba(245, 230, 184, 0.95) 40%,
-      rgba(200, 162, 74, 0.7) 70%,
+      rgba(255, 230, 210, 1) 0%,
+      rgba(255, 176, 133, 0.95) 40%,
+      rgba(199, 74, 1, 0.7) 70%,
       transparent 100%
     );
     animation-name: particle-drift;
@@ -441,8 +441,8 @@
      plate, so every card catches a little light instead of reading flat. */
   .plate {
     background:
-      linear-gradient(180deg, rgba(200, 162, 74, 0.06) 0%, transparent 42%),
-      linear-gradient(180deg, var(--card), rgba(14, 23, 40, 0.55));
+      linear-gradient(180deg, rgba(199, 74, 1, 0.06) 0%, transparent 42%),
+      linear-gradient(180deg, var(--card), rgba(10, 10, 10, 0.55));
   }
 
   /* Gilded top edge — a hairline of foil across the top of a surface, brightest
@@ -460,7 +460,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(233, 206, 134, 0.5),
+      rgba(240, 122, 49, 0.5),
       transparent
     );
     pointer-events: none;
@@ -469,15 +469,15 @@
   /* Inset data tiles — the small stat boxes. Same warm lift, less of it. */
   .tile {
     background:
-      linear-gradient(180deg, rgba(200, 162, 74, 0.07) 0%, transparent 55%),
+      linear-gradient(180deg, rgba(199, 74, 1, 0.07) 0%, transparent 55%),
       linear-gradient(180deg, var(--secondary), rgba(16, 27, 47, 0.85));
-    border: 1px solid rgba(200, 162, 74, 0.12);
+    border: 1px solid rgba(199, 74, 1, 0.12);
   }
 
   .grid-bg {
     background-image:
-      linear-gradient(rgba(200, 162, 74, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200, 162, 74, 0.06) 1px, transparent 1px);
+      linear-gradient(rgba(199, 74, 1, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(199, 74, 1, 0.06) 1px, transparent 1px);
     background-size: 56px 56px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
   }
@@ -496,7 +496,7 @@
   .aurora::before {
     background: radial-gradient(
       40% 40% at 30% 30%,
-      rgba(200, 162, 74, 0.10),
+      rgba(199, 74, 1, 0.10),
       transparent 70%
     );
   }
@@ -511,9 +511,9 @@
 
   .glow-ring {
     box-shadow:
-      0 0 0 1px rgba(200, 162, 74, 0.28),
-      0 0 80px -10px rgba(200, 162, 74, 0.35),
-      inset 0 1px 0 rgba(245, 230, 184, 0.25);
+      0 0 0 1px rgba(199, 74, 1, 0.28),
+      0 0 80px -10px rgba(199, 74, 1, 0.35),
+      inset 0 1px 0 rgba(255, 176, 133, 0.25);
   }
 
   .animate-float {

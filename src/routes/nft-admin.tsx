@@ -206,13 +206,13 @@ function NftAdmin() {
     try {
       const hash = await call();
       setLastTx(hash);
-      toast.success(`${label} submitted`, { description: `${hash.slice(0, 10)}…` });
+      toast.success(`${label} ${t("submitted")}`, { description: `${hash.slice(0, 10)}…` });
       // Reads settle a moment after the receipt lands.
       setTimeout(refetchAll, 4000);
       return hash;
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);
-      toast.error(`${label} failed`, { description: msg.split("\n")[0].slice(0, 160) });
+      toast.error(`${label} ${t("failed")}`, { description: msg.split("\n")[0].slice(0, 160) });
       return undefined;
     }
   };
@@ -349,7 +349,7 @@ function NftAdmin() {
             {t("NFT Certificate Operations")}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            {(collectionName as string) || "Creator DAO Certificate"}{" "}
+            {collectionName ? t(collectionName as string) : t("Creator DAO Certificate")}{" "}
             <span className="font-mono">({(collectionSymbol as string) || "—"})</span> ·{" "}
             <a
               href={`${EXPLORER}/token/${nft}`}
@@ -405,7 +405,7 @@ function NftAdmin() {
               <div key={r.round}>
                 <div className="flex items-baseline justify-between text-sm">
                   <span className="font-medium">
-                    Round {r.round}{" "}
+                    {t("Round")} {r.round}{" "}
                     <span className="text-muted-foreground font-mono text-xs">
                       {fmtSerial(r.from)} … {fmtSerial(r.to)}
                     </span>

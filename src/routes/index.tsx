@@ -18,7 +18,7 @@ import {
 import { Section, Card, GoldButton, OutlineButton } from "@/components/ui-bits";
 import { Particles } from "@/components/Particles";
 import { useI18n } from "@/lib/i18n";
-import inCircleLogo from "@/assets/in-circle.png";
+import inCircleLogo from "@/assets/in-circle-new.png";
 import { BRAND } from "@/lib/brand";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";

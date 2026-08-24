@@ -5,7 +5,7 @@ import { ethers } from "ethers";
  * For write operations, users sign transactions via their wallet (wagmi).
  */
 
-const BDL_ADDRESS = import.meta.env.VITE_TOKEN_CONTRACT_ADDRESS;
+const BDF_ADDRESS = import.meta.env.VITE_TOKEN_CONTRACT_ADDRESS;
 const WEBKEY_ADDRESS = import.meta.env.VITE_WEBKEY_CONTRACT_ADDRESS;
 
 const BSC_RPC =
@@ -26,10 +26,10 @@ const ERC20_ABI = [
  * Returns the project token balance formatted as a human-readable string.
  */
 export async function getTokenBalance(address: string): Promise<string> {
-  if (!BDL_ADDRESS || BDL_ADDRESS === "PENDING_DEPLOYMENT")
+  if (!BDF_ADDRESS || BDF_ADDRESS === "PENDING_DEPLOYMENT")
     return "0";
   try {
-    const contract = new ethers.Contract(BDL_ADDRESS, ERC20_ABI, provider);
+    const contract = new ethers.Contract(BDF_ADDRESS, ERC20_ABI, provider);
     const balance = await contract.balanceOf(address);
     return ethers.formatEther(balance);
   } catch {
@@ -41,10 +41,10 @@ export async function getTokenBalance(address: string): Promise<string> {
  * Returns the project token's total supply formatted as a human-readable string.
  */
 export async function getTotalSupply(): Promise<string> {
-  if (!BDL_ADDRESS || BDL_ADDRESS === "PENDING_DEPLOYMENT")
+  if (!BDF_ADDRESS || BDF_ADDRESS === "PENDING_DEPLOYMENT")
     return "0";
   try {
-    const contract = new ethers.Contract(BDL_ADDRESS, ERC20_ABI, provider);
+    const contract = new ethers.Contract(BDF_ADDRESS, ERC20_ABI, provider);
     const supply = await contract.totalSupply();
     return ethers.formatEther(supply);
   } catch {
