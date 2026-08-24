@@ -1,0 +1,436 @@
+CLOSING STATEMENT
+결정은  공개되고,
+권한은  분산되며,
+결과는  기록됩니다 .
+BLOCK DAO FOUNDATION — 새 로 운  디 지 털  조 직 의  기 준 을  제 시 합니 다 .
+공개
+모든 제안과  의 결 은  기 록으
+로 남습니 다분산
+의사결정  권 한은  참 여자에게
+귀속됩니 다기록
+집행 결과는  누 구나  검 증 할
+수 있습니 다
+CONFIDENTIAL · BLOCK DAO FOUNDATION 16 / 29
+SECTION 11.0 · TOKEN ARCHITECTURE
+BDF Token InformationNATIVE ASSET SPECIFICATION
+투명한  발행 과  균 형  있는  운영  구조
+SYMBOL
+BDF
+Block DAO FoundationTYPE
+BEP-20
+Standard InterfaceCHAIN
+BSC 
+(Binance Smart Chain)
+저비용  · 고 확 장성TOTAL SUPPLY
+10,000,000,000
+Fixed · 민 팅  불 가GOVERNANCE
+1인 1표
+Proof of PersonhoodCONTRACT
+0x…
+공식 채널  확 인
+ALLOCATION STRUCTURE — Community-Governed Distribution
+25% Fan DAO 25% Creator DAO 15% Marketing 10% Team 10% Governance 10% Eco Fund 5% Early
+할당 영역 운영 역할 비율 수량 (BDF)
+Fan DAO Community 팬 참여  보상  및  티 어  시스 템  운영 25% 2,500,000,000
+Creator DAO 프로듀서  DAO 와  창 작자  인 센 티브  분배 25% 2,500,000,000
+Marketing 생태계  확 장과  파 트 너 십 , 글 로 벌  캠 페 인 15% 1,500,000,000
+Team 개발·운영 팀  인 센 티브  ( 베 스 팅 ) 10% 1,000,000,000
+Governance 거버넌스  인 센 티브  및  의제  보상 10% 1,000,000,000
+Ecosystem Fund 파트너십 · 신 규  프 로 젝 트 · 공동  자 산 10% 1,000,000,000
+Offline DAO Airdrop 오프라인  DAO 활 동  검 증  기 반  무상  에어드 랍 5% 500,000,000
+TOKEN INFORMATION PRINCIPLE
+Fan DAO(25%) + Creator DAO(25%) = 50% 가  커 뮤 니 티 에  직 접  할당되 어 , 발행  구조  자체 가  " 참 여자  중 심 " 이 라는  설계  원 칙 을  반 영합니 다 . Fixed Supply 10B는 제네시스  시 점  일 괄  발행  후  추 가  민 팅 이  불 가 능 하 며 , 사전 판매  0 건 구조에서  검
+증된 오프라 인  DAO 활 동  기 반  무상  에어드 랍으로만  분배 됩니 다  — 가 격  차 익 을  위한  발행  구조 가  완 전 히  배 제 됩 니 다 .CONFIDENTIAL · BLOCK DAO FOUNDATION 17 / 29
+SECTION 12.0 · BDF DISTRIBUTION ARCHITECTURE
+BDF · 무상  에어드 랍  기 반  분배  구조ZERO PRE-SALE · AIRDROP-ONLY DISTRIBUTION
+사전 판매  0 건  · 검 증 된  오프라 인  DAO 활 동  기 반  무상  분배
+★ CORE PRINCIPLE · BDF DISTRIBUTION
+BDF는  사전 판매 가  단  1 건 도  존 재 하지  않 으 며, 전 세계  DAO 들의  오프라 인  활 동 이  확 인 되 었 을  때  비 로 소  무상으로  에어드 랍되어 분배
+됩니다 .
+토큰을  사고  팔 아  차 익 을  얻 는  발행 이  아니라 , 운영  주체 가  검 증 된  활 동을  수 행 한  DAO 들에게  분배  자 격 이  발생 하 는  구조  — 발행  자체 가  투 명한  운영  검 증  결 과 와  결 합 되 어 야  합니 다 .
+BDF ZERO PRE-SALE
+사전 판매  0 건  보장
+BDF · NO PRIVATE SALE · NO PUBLIC SALE
+프라이빗  라운드 · 퍼 블 릭  라운드 ·ICO·IEO·IDO 어 떤  구조의  사 전  판매 도  없
+음. BDF는  오 직  검 증 된  오프라 인  활 동에  대한  보상으 로 만  발행 됨 .
+NON-TRADABLE ORIGIN
+발행 단계 에서  가 격  0
+NO PRICE AT ISSUANCE
+에어드랍  시 점에서  BDF 는  가 격 을  갖 지  않 음  — 후 속  시 장  활 동에  의해  비 로
+소 가격이  형성 되 며 , 사 전에  결 정 된  매 각  가 격 · 청약 가 · 딜  구조  없 음 .STEP 1 · OFFLINE DAO ACTIVITY VERIFICATION
+오프라인  DAO 활 동의  검 증
+전 세계  분산된  DAO 들 이  수 행 한  오프라 인  활 동 ( 모 임 · 교 육 · 심 사 · 공동  의 사 결 정  등 ) 의  실재  여부를  운영  주체 가  결 정 론 적  절 차 로  검 증  — 활 동  기 록 · 참 가 자  수 · 의 사 결
+정 결과의  다 중  증 거 가  결 합 되 어 야  자 격  인 정 .
+STEP 2 · ELIGIBILITY REGISTRY GENERATION
+자격 명단  생 성  + 공개
+검증된  활 동에  참 여한  DAO 지 갑  주소 · 자 격  비 율 · 에어드 랍  예 정  수 량 이  공개 된  명 단 으 로  작성  — 누 구나  명 단 을  조회 할  수  있 고 , 산 정  기 준 과  절 차 는  멱 등 성  있게  공개
+됨.
+STEP 3 · ON-CHAIN AIRDROP EXECUTION  ·  검증된  지갑  주소에  무상으 로  직 접  전 송  ( 제 네 시스  스 마트  컨 트 랙 트  실행 )
+★ GUARANTEE   사전  판매  부 재  + 발행  단계  가 격  0 + 무상  에어드 랍  = 가 격  차
+익 발행  구조  완 전  배 제
+CONFIDENTIAL · BLOCK DAO FOUNDATION 18 / 29
+SECTION 13.0 · SUPPLY ARCHITECTURE
+Deflationary ArchitectureDUAL REMOVAL MECHANISM
+공급 설계 로  표현 하 는  가 치  환 원  구조
+01 · MECHANISM A
+
+실매출  연동  번  (Real-Sales Burn)
+REAL-SALES BASED BURN
+BDF 활용  IP 카 탈 로 그의  연간  실매출  기 반  연동 ·
+연간 IP 카 탈 로 그  매출 의  3%가 영구 소각 ·
+토큰 시장  가 격  비연동  · 자 율 적  시 장  매 수  없 음 ·02 · MECHANISM B
+
+물물거래  결 제  기 반  번
+P2P PAYMENT-BASED BURN
+BDF가  서비 스 · 상 품 · 콘텐 츠  이 용  대 금 으 로  결 제 되 는  물물 거 래 에  사 용
+될 때·
+이용 대금 의  3%가 해당  거래  시 점 에서  영구 소각 ·
+결제 행위와  직 접  결 합 된  디플레 이 션  구조 ·3-YEAR CUMULATIVE REMOVAL
+86.41M BDF
+초기 공급 량  10B 대비
+약 8.6% 영구  제거
+DUAL MECHANISM SYNERGY
+3-YEAR PROJECTED REMOVAL SCHEDULE
+PERIOD MECHANISM A MECHANISM B TOTAL REMOVED REMAINING SUPPLY
+01Year 1 · Foundation 15.00 M 5.00 M 20.00 M 980.0 M
+02Year 2 · Activation 13.125 M 15.00 M 28.125 M 951.8 M
+03Year 3 · Distribution 8.289 M 30.00 M 38.289 M 913.5 M
+ΣTOTAL 36.414 M 50.00 M 86.414 M -8.6%LONG-TERM SUPPLY TRAJECTORY
+INITIAL SUPPLY
+10,000,000,000→LONG-TERM TARGET
+100,000,000
+DESIGN INTENTION
+두 메커니 즘 이  결 합 되 어  조 직  운영과  환 원 이  함 께  작동 하 는  공급 설계를 만
+듭니다 . 이는  단순  분배 가  아 닌 , 운영에  참 여 할 수록  공 급 이  환 원 되 는  책임
+구조입니다 .
+DUAL MECHANISM · WHY IT MATTERS
+운영 수익  분배에  머 무 르 지  않 고 , 실 제  참 여  활 동과  IP 가 치  상 승 을  조직 운영에  연동 된  공 급  환 원으로 연결합니 다  — 참 여  활 동 이  곧  공 급  환 원으 로  이 어 지 는  책 임  있는  운영  모 델 입니 다 .
+CONFIDENTIAL · BLOCK DAO FOUNDATION 19 / 29+
+SECTION 14.0 · OPERATING INTEGRITY
+재단 운영  무 결 성  · 공개  검 증  체 계OPERATING INTEGRITY VERIFICATION
+공개 절차  · 독 립  검 증  · 정 량  메트 릭  — 모 든  운영  결 정의  무 결 성  보장
+PILLAR 1 · 공개  절 차
+운영 결정의
+절차적  공개
+PROCEDURAL TRANSPARENCY
+모든 운영  결 정의  절 차 · 근 거 · 결 과를 누구나  검 증  가 능 한  형 태 로  공개
+— 조직  내부의  비공개  결 정  구조를  차단
+다중서명  운영  명 단 공개  (역할  + 권 한  범 위 )●
+정책 결정  로 그 공개  (제안 → 검토 → 합의 → 집행 )●
+공동 자산  사 용  내 역 정기적  공개  보 고●
+파트너십 · 계약의 상대방 · 조 건 · 기 간●PILLAR 2 · 검 증  메트 릭
+정량 지표 의
+독립 검증  가 능 성
+VERIFIABLE QUANTITATIVE METRICS
+모든 운영  지 표는 외부  검 증 자 가  재계산 · 재 확 인 할  수  있는  방 식 으 로
+공개 — 보 고 · 집계 의  단 일  실 패 점  제거
+자산 흐름 검증  가능 한  온 체 인  추적●
+운영 비용  보 고의 표준  양식  + 공개  절 차●
+결제 정산  메트 릭의 외부  검 증  가 능 성●
+활동 검증  결 과의 다중  증 거  결 합●PILLAR 3 · 견 제  구조
+단일 운영자  의 존
+제거 구조
+PLURALITY OF OPERATORS
+중앙 통제  악 용 · 단 일자  의 존 을  견 제하는 다중  운영자 · 다 중  증 명  구조
+— Foundation 권 한도  점 검 · 견 제  받 음
+다중서명  운영의 분산  권 한  행 사●
+권한 분리 (제안 /검토 / 집행 자  동일 인  금 지 )●
+독립 검증 자  풀의 견제  참 여●
+재단 권한  자체의 자동  점 검  절 차●
+★ PUBLIC OPERATIONAL METRICS · 정 량  공개  지 표
+SECTION A · ASSET FLOW
+재원 흐름 의  월 별  공개  — 입 출금 · 잔 액 · 집행 자  다 중서명  비 교
+검증 가능SECTION B · ACTIVITY VERIFICATION
+활동 검증  결 과의  공개  통계  — 검 증  대 기 · 완 료 · 이 의  제 기  건 수
++ 처리  시 간SECTION C · GOVERNANCE OUTPUT
+거버넌스  처 리 량 · 합의  결 과  공개  — 의제  수 · 합의  도 달  시 간 · 이
+의 비율SECTION D · COMPLIANCE
+컴플라이 언 스  점 검  결 과  공개  — 내부  점 검 · 외 부  검 증  결 과  + 후
+속 조치
+운영 무결 성은  조 직  내부의  약 속 이  아 닌  독 립  검 증  가 능 한  공개  절 차 의  결 과입니 다 — Foundation 의  모 든  결 정 · 집행 · 자 산  흐 름 이  외 부  검 증 자 가  재 확 인 할  수  있도록  발행되 며 , 이 는  Foundation 운영  메트 릭 의  일 환 으 로  정 기  노출 됩 니 다 .
+CONFIDENTIAL · BLOCK DAO FOUNDATION 20 / 29
+SECTION 15.0 · PROJECT ATTRIBUTION NOTICE
+프로젝트  안내  · Block Label 은  BDF 의  첫 번 째  프 로 젝 트FIRST PROJECT · MISCONCEPTION NOTICE
+엔터테인 먼 트  키워 드  사 용에  대한  사 실  안내
+★ IDENTITY NOTICE · 오해  방 지 를  위한  안내
+Block Label은 Block DAO Foundation(BDF)의 첫번째  프 로 젝 트입니다  — 본  슬 라 이 드  이 후  등 장 하 는  음 악 · 콘텐 츠
+관련 모든  내용은  Block Label 프 로 젝 트  내부의  운영  모 델이며, BDF 자체의  발행  구조 · 거 버 넌 스 · 검 증  체 계와  구 분 됩 니
+다.
+BDF 백서는  Foundation 설계 에  관한  백 서 이 며 , Block Label 은  BDF 가  검증 가능 한  작동  사 례로 제시하 는  첫  프 로 젝 트입니 다 . Foundation 거 버 넌 스 ·BDF·De-PIN·DASA· 검 증  체 계 는  Block Label 유무 와  무관하게 독립 적 으 로  운영
+됩니다 .
+ROOT ORGANIZATION
+STAGE 12 · BDF
+Block DAO Foundation
+DECENTRALIZED FOUNDATION
+분산형  재단  — DASA· 국 제  심 사 · 교 육 · 플 랫 폼  운영  + 자체  사 업  로 드 맵 을  운영
+하는 중립 적  Foundation. 본  백 서의  1 차  대상 .FIRST PROJECT
+STAGE 15 · 첫 번 째  작동  사 례
+Block Label — BDF 의  첫 번 째  프 로 젝 트
+FIRST OPERATING INSTANCE
+아래 슬라 이드 (22~25) 에서  설 명 되 는  음 악 · 콘텐 츠  키워 드 (Fan DAO·Original
+IP·Membership Pass 등 ) 는  전적으로  Block Label 내부  운영  모 델입니다 .
+BDF 거버 넌 스는  Block Label 안에서  1 차  검 증  사 례 로  작동 .FUTURE PROJECTS
+STAGE 16+ · 추 가  프 로 젝 트
+추후 서포트  프 로 젝 트들
+FUTURE INSTANCES
+BDF는  Block Label 외 에도  향 후  추 가 될  다 양 한  프 로 젝 트의  검 증  기 준 으 로  작
+동. 각  프 로 젝트는  독 립  발행 · 독 립  거 버 넌 스로  운영 되 며  Foundation 표 준 만  공
+유.
+★ MISCONCEPTION NOTICE · 백 서  해 석  안내
+Block DAO Foundation 백 서는 탈중앙화  Foundation 의  설계 · 거 버 넌 스 · 검 증  체 계 를  다 루 는  백 서 이 며 , Block Label 은  BDF 표 준 을  검 증 하 는  첫번째  작동  사 례입니다 . 이 후  슬라 이 드에  등 장 하 는  음 악 · 팬 ·IP· 콘텐 츠  산업  키워 드는  Block Label 운영  모 델
+의 사전  사 례로 제시된  것 이 며 , BDF 자체  사 업 은  DASA· 국 제  심 사 · 교 육 · 플 랫 폼  + 결 제  확 장  + 국 제  기 구  성장입니 다 ( 슬 라 이 드  30 운영  로 드 맵  참 조 ).
+CONFIDENTIAL · BLOCK DAO FOUNDATION 21 / 29
+SECTION 16.0 · PROJECT ATTRIBUTION NOTICE
+Converging Digital Media Market★ BLOCK LABEL · BDF 첫 번 째  프 로 젝 트  사 례
+Block Label 첫 번 째  작동  사 례  — 음 악  시 장  데 이 터
+★ PROJECT ATTRIBUTION NOTICE — 본  슬 라 이 드의  음 악 · 숏 폼 ·AI· 스 트 리 밍  시 장  데 이 터는  Block Label(BDF 의  첫 번 째  프 로 젝 트 ) 의  작동  사 례입니다 . BDF 는  블 록체 인  기 반  탈 중 앙 화  Foundation 표 준 을  다 루며 , 본  데 이 터는  Block Label 운영  모 델 의
+사전 검증  사 례 로 만 제시됩니 다 .
+Block Label 에서  검 증 된  시 장  데 이 터  — 전 통  음 악 + 숏 폼 +AI 미 디 어 가  교차 하 는  지 점 입니 다 .
+MARKET 01 · MUSIC
+글로벌  음원  시 장
+GLOBAL RECORDED MUSIC · 2026
+$33B
+약 43조  원  규 모  · 연 7~9% 성장 · 스트리 밍 ·IP 확 장 이  견 인MARKET 02 · SHORT-FORM VIDEO
+숏폼 비디 오  시 장
+GLOBAL SHORT-FORM VIDEO · 2026
+$59.1B
+CAGR 18.9% 폭발적  성장  · 한 국  숏 드라마  시 장  $4.64B · 이 용 률
+70.7%MARKET 03 · AI IN MEDIA
+AI 미디어  시 장
+AI IN MEDIA & ENTERTAINMENT
+$18.47B
+2025년  $13.67B →  메 인스 트 림  진입  · CAGR 35.1%
+MARKET 04 · STREAMING
+음악 스트 리 밍  시 장
+$65BSPOTIFY MAU (2026 Q2)
+696MPAID SUBSCRIBERS
+276MKEY DRIVER
+5G & Fan Communication
+CONVERGENCE INSIGHT
+단일 미디어 가  아 닌  음악 + 숏 폼  + AI + 실 시 간  소 통이 교차하는  지 점 이  새 로 운  가 치를  만 듭 니 다 .
+CONFIDENTIAL · BLOCK DAO FOUNDATION 22 / 29
+SECTION 17.0 · PROJECT ATTRIBUTION NOTICE
+산업 구조 적  한 계  ↔  IP 자 산 화  패 러 다 임★ BLOCK LABEL · BDF 첫 번 째  프 로 젝 트  사 례
+Block Label 첫 번 째  작동  사 례  — 산업  한 계와  IP 자 산 화
+★ PROJECT ATTRIBUTION NOTICE — 본  슬 라 이 드의  블 랙 박 스  정 산 ·360° 계약 ·IP 자 산 화  데 이 터는  Block Label(BDF 의  첫 번 째  프 로 젝 트 ) 의  작동  사 례입니다 . BDF 는  탈 중 앙 화  Foundation 표 준 을  다 루며 , 본  데 이 터는  Block Label 운영  모 델 의  사전 검
+증 사례로만 제시됩니 다 .
+Block Label 이  검 증 한  산업  구조 적  한 계와  IP 자 산 화  패 러 다 임  전 환 입니 다 .
+01 · BLACK BOX
+
+블랙박스  정 산
+NO TRANSPARENCY
+스트리밍  후  실제  수 익 이  아 티 스 트에  도 달 하기 까 지  평균 6~12 개
+월. 복잡한  유 통  수수 료와  계약  조 건 으 로  정 산  근 거  확 인  불 가 .02 · RIGID 360°
+
+경직된  360° 계약
+NO OWNERSHIP
+전통 계약  구조에서  레 이 블 은  아 티 스 트  수 익 ( 공연 · 굿 즈 · 음원 ) 을
+가져가고 , 아티스트  본 인이 마스터  권 리를  갖 지  못 하 는  사 례  다
+수.03 · HIGH CAPITAL
+
+높은 자본  진입  장 벽
+NO DIVERSITY
+신인 양성에  수 억  원의  매 몰  비용  발생  →  검 증 된  스 타일만  반복  선 택 하 는  보수 적  운영  유
+도 →  시장의  다 양 성  부 족 과  직 접  연 결 .
+STRUCTURAL CONFLICT— 시장  성장  ↔  내부  갈 등  심 화  — PARADIGM SHIFT 2026
+FINANCIAL TREND · IP ASSETIZATION
+전통 레이 블 과  펀 드 (BlackRock, Hipgnosis)가 음악  저 작 권 을  "금리 ·경 기  변 동에  영 향 받 지  않 는  안전  자 산 "으로 평가 해  카 탈 로 그를  수조  원  규 모
+로 매입  중
+음악 IP가  안전  자 산 으 로  재 평 가 되 는  흐 름 은  Block Label 의  오 리지 널  IP 전 략 과  직 접  연 결 됩 니 다  — 자 본  동원에  의 존 하지  않 는  팬  중 심  운영  모 델 이  이  트 렌 드의  균 형점 이  됩 니 다 .
+CONFIDENTIAL · BLOCK DAO FOUNDATION 23 / 29
+SECTION 18.0 · PROJECT ATTRIBUTION NOTICE
+Block Label · 현재  계약  아 티 스 트  & 자체  IP★ BLOCK LABEL · BDF 첫 번 째  프 로 젝 트  사 례
+현재 계약  아 티 스 트  + 자체  IP 사 방신  2.0
+★ PROJECT ATTRIBUTION NOTICE — 본  슬 라 이 드는  Block Label(BDF 의  첫 번 째  프 로 젝 트 ) 의  작동  사 례입니다 . 본  슬 라 이 드에서  소개 되 는  아 티 스 트  라 인 업 · 자체  IP 등  Block Label 운영  사 례 는  Block Label 홈 페 이지 를  통 해  직 접  확 인할 수  있습니 다 .
+CURRENT ARTIST ROSTER
+유명 아티 스 트  계약  라 인 업
+VERIFIED ARTIST CONTRACTS · 2026
+Block Label 은  검 증 된  유명  아 티 스 트 와  직 접  계약 을  체 결 하고  운영  — 단 순  신 규  발 굴 이  아 닌  검 증 된  시 장  가 치를  기 반
+으로 한  파 트 너 십  구조 .
+Jackie's boy — 검증된  시 장  가 치를  가 진  유명  아 티 스 트  (BDF 운영  모 델  검 증  사 례 )
+Fidella — 검증된  시 장  가 치를  가 진  유명  아 티 스 트  (BDF 운영  모 델  검 증  사 례 )FIRST-PARTY IP · BLOCK LABEL ORIGINAL
+자체 오리지 널  IP · 사 방신  2.0
+SABANG-SIN 2.0 · BLOCK LABEL ORIGINAL
+Block Label 이  자체  운영 하 는  오 리지 널  IP — 사 방신  2.0 은  BDF 의  콘텐 츠  접 근 · 발 언권  분배  모 델 이  적 용 되 는  1 차
+자체 IP.
+자체 IP의  의미 — 자본  동원에  의 존 하지  않 고  팬  참 여  기 반 으 로  운영 되 는  Block Label 의  대 표  IP 자 산  (BDF 운영
+표준의  첫  적 용  사 례 )
+★ BLOCK LABEL · BDF 첫 번 째  작동  사 례
+SECTION A · 계약  아 티 스 트
+Block Label 은  검 증 된  유명  아 티 스 트 와  직 접  계약  라 인 업 을  운영 . BDF 거 버 넌 스
+의 1차  검 증  사 례 .SECTION B · 자체  IP
+Block Label 은  자체  오 리지 널  IP 를  운영 . BDF 운영  표 준 의  첫  적 용  사 례 .SECTION C · BDF 와 의  관 계
+Block Label 은  BDF 의  첫 번 째  작동  사 례  — 본  사 례 는  BDF 운영  표 준 의  사 전  검
+증 결과로  제 시 . 상세  내 역 은  Block Label 홈 페 이지  참 조 .
+Block Label 은  검 증 된  아 티 스 트  라 인 업 과  자체  IP 를  운영 하 는  실 제  존 재 하 는  프 로 젝 트입니다  — 후 속  슬 라 이 드의  멤 버 십  패 스 ·De-PIN· 듀 얼  번  메 커 니 즘 은  본  사 례  위에  구 축됩 니 다 . 사 례 의  상세  내 역 ( 아 티 스 트  라 인 업 · 자체  IP 카 탈 로 그  등 ) 은  Block Label
+홈페이지 를  통 해  직 접  확 인할 수  있습니 다 .
+CONFIDENTIAL · BLOCK DAO FOUNDATION 24 / 29
+SECTION 20.0 · STRUCTURAL LIBERATION
+아티스트 · 팬  영구  공 생POST-CONTRACT RELATIONSHIP
+계약 종료  후에도  끊 김  없 는  관 계
+기존 엔터 테 인 먼트  산업 에서  계약  종 료 는  곧  경제 적  단 절 을  의미 했 지 만 , Block Label 의  오프라인  DAO 활 동  검 증  기 반  구조는 계약 기간  종 료  후 에도  팬 의  아 티 스 트  지 원 이  멈 추 지  않 는  영구  공 생  관 계를 만듭니 다  — 사
+전 판매  없는  무상 에어드 랍 모델  위에서 .
+PHASE 1 · CONTRACT PERIOD
+IP 권리  보호  — 온 체 인  vault 에서  안전  관 리
+계약 기간  동안  창 작 된  모 든  IP 는  Corporate DAO 의  security vault 에  안전  등 록 · 보호 . 계약 종료  시 점 에  권 리  이 동  없 이  유 지.
+PHASE 2 · CONTRACT TERMINATION
+Seamless Transition — 복 잡 한  이 전  절 차  없 이  권 리  보호
+계약 종료  시 점 이  도 래 해도  권 리 는  복 잡 한  이 전  절 차  없 이  자동으 로  보호  상 태  유 지 . 아티스트  인지 에  따 라  즉 시 · 매 끄 럽 게  전 환.
+PHASE 3 · POST-CONTRACT AUTOMATED SUPPORT
+독립 후에도  지 원  계 속  — 자동  정 산  + 레 퍼 럴  펀 드
+아티스트 가  독 립한  후 에도  투 명한  정 산 과  레 퍼 럴  펀 딩 이  계 속  작동 . 슬레이브  계약 의  종결 — 팬의  집단  기여 력 만으 로 도  창 작  활 동의  경제 적  독 립  가 능 .
+CONFIDENTIAL · BLOCK DAO FOUNDATION 25 / 29
+SECTION 21.0 · IP PRODUCTION
+오리지널  IP 생산  파 이 프라 인  + OSMUORIGINAL IP PIPELINE · OSMU
+AI 기술  기 반  제작  + 하 나의  IP 다 채 널  확 장
+AI 기술  도입으 로  제작  효 율 을  극 대화 하고 , 전 통  기 획 사가  대 규 모  예산 을  투 입해 야  했던  오 리지 널  IP 파 이 프라 인 을  자체  운영  가 능  영 역 으 로  전 환 . One Source Multi Use(OSMU) 전략으로  하나의  IP 를  음 악  · 공연  ·
+굿즈 · 웹 툰  · 웹 소 설  · 숏 드라마 같은  다채 널 로  확 장 .
+− cost
+PRODUCTION COST DIRECTION↑ scale
+IP PRODUCTION CAPACITY↑ ROI
+SHORT-DRAMA MARKET POTENTIAL→ scaleup
+SHORT DRAMA LINEUP EXPANSION
+01 · MUSIC IP
+
+음원 · 앨 범  IP
+세계 작곡 가  협 업  · 정 규 · 싱 글  앨 범  라 인 업  · 다 양
+한 음원  확 장  방 향02 · SHORT DRAMA
+
+숏드라마  IP
+마이크로  에 피 소드  라 인 업  · 다 중  시리 즈  동 시  운영
+방향03 · TRANSMEDIA
+
+웹툰 · 웹 소 설
+웹툰·웹소 설  연 재  라 인 업  · 숏 드라마 · 영화  원소 스
+확장 방향04 · AI SHORT FILM
+
+AI 숏필름  글 로 벌  쇼케 이스
+국제 영화제  + 테 크  이 벤 트  공 식  출 품
+PROTOCOL ACTIVITY STRUCTURE · 활 동  비중과  운영  재 원의  방 향
+활동 비중  (Music IP · MD · 공연  · 글 로 벌  OTT) 운영 재원  ( 제작비 · 관 리 비 · 보 험 )
+Music IP 활 동  — 스 트 리 밍 · 다 운 로 드 · 저 작 권 MD 활동  — 실물  음 반 · 한정  굿 즈 · 디 지 털  수 집 품 공연 — 티 켓 · 스 폰 서 십 ·VOD글로벌  OTT — 구 독 료 · 인 앱 · 광 고 · 라 이 선 스
+CONFIDENTIAL · BLOCK DAO FOUNDATION 26 / 29
+SECTION 22.0 · DE-PIN NODE
+Music Pie De-PIN · 물 리  스 트 리 밍  노 드★ BLOCK LABEL · BDF 첫 번 째  프 로 젝 트  사 례
+Music Pie · 스 트 리 밍  노 드  ( 삼 성  Knox 기 반  태블 릿  PC)
+★ DE-PIN OVERVIEW · BLOCK LABEL HARDWARE
+Music Pie · 삼성 Knox 기 반  태블 릿  PC로 구현되 는  스 트 리 밍  노 드
+삼성 Knox 보안  플 랫 폼  위에서  동작 하 는  스 트 리 밍  노 드  — Knox 의  디 바 이스  무 결 성  검 증 으 로  실 제  청취  행 동의  신 뢰 성  보장 . 통 합 된  단 일  노 드  형 태 로  운영 되 며  개 인  환 경  + 상 업  환 경을  모 두  포 괄 .
+★ MUSIC PIE · 통 합  스 트 리 밍  노 드
+
+삼성 Knox 기 반  스 트 리 밍  노 드
+SAMSUNG KNOX · UNIFIED STREAMING NODE
+① 보  안  플  랫  폼 삼성 Knox 디 바 이스  무 결 성  검 증  — 실 제  청취  행 동의  신 뢰 성  보장
+② 핵  심  강  조실사용  검 증  기반  통 합  스 트 리 밍  노 드  — 개 인 / 상 업  구 분  없 는  단 일  노 드  운영
+③ 보  안  레  이 어 1기기  1노 드  원 칙  + Knox 디 바 이스  신 뢰 성  — Sybil 공 격  원 천  차단
+④ 구  매  · 계  약 삼성 Knox + 삼 성전자 판매  태블 릿  PC 구 매  계약  체 결  ✓
+★ BLOCK LABEL · BDF 첫 번 째  프 로 젝 트  사 례 — Block Label 은  삼성 Knox + 삼 성전자 판매  태블 릿  PC 구 매  계약을 체결하 여  Music Pie 노 드를  Knox 기 반  태블 릿  PC 모 델 로  구 현 . 계약  사 실  검 증  내 역 은  Block Label 홈 페 이지 를  통 해  직 접  확 인  가 능.
+5-STEP FUNCTIONAL FLOW — SAMSUNG KNOX 기 반  청취  검 증  →  BDF UTILITY REWARD
+01
+
+모바일  연동  인 증
+사용자  인 증  + 기기  페 어 링02
+
+Knox 디 바 이스  무 결 성
+삼성 Knox 신 뢰  검 증03
+
+실제 청취  검 증
+페이크  스 트 리 밍  차단04
+
+매장 모드  인 증
+상업 공간  운영  모드05
+
+BDF 참여  보상
+검증된  활 동  기 반  보상  누 적
+CONFIDENTIAL · BLOCK DAO FOUNDATION 27 / 29
+SECTION 23.0 · TOKEN ARCHITECTURE
+듀얼 토큰  라 인  독 립  구조BDF · DE-PIN 독 립  TOKEN LINES
+발행·배분 · 거 버 넌 스  분 리  + 가 격  비연동
+LINE A · UTILITY TOKEN
+BDF — Block DAO Foundation Token
+10,000,000,000 BDF
+TOTAL SUPPLY CAP · 발행  한도  (no minting)
+발행 시점 — 제네시스  시 점  일 괄  발행  ( 추후  발행 · 민 팅  없 음 ) ·
+배분 구조 — 화이트페 이 퍼  7 그 룹  할당  스 케줄 에  따 라  정해진  주소 로 만  분배  — 사전 판매  0 건 ·
+유틸리티 — 검증된  오프라 인  DAO 활 동  기 반  운영  DAO 의 결권 , Fans/ 창 작자  보상  ( 파 트 너  단계 ) ·
+거버넌스 — Block Label Foundation 거 버 넌 스  ( 자체  의 사 결 정 ) ·LINE B · HARDWARE-MINED TOKEN
+Music Pie — De-PIN 노드  풀  토 큰
+Pre-mine 0
+사전 채굴  없음  · 노 드  운영  검 증 으 로 만  발행
+발행 시점 — Music Pie 노 드  검 증  완 료  시 점 에만  발행  ( 사 전  채 굴  0) ·
+배분 구조 — 노드  운영  기여도에  따 라  분배 , BDF 백 서  할당 과  무관 ·
+유틸리티 — Music Pie 하 드 웨 어  운영  보상 , 노 드  운영 권  — BDF 지 갑  외 부  기 능 ·
+거버넌스 — 별도  운영  콘트 랙 트  / 노 드  운영  거 버 넌 스  (BDF DAO 와  분 리 ) ·
+DUAL BURN · MECHANISM A
+
+실매출  연동  번  (Real-Sales Burn)
+앨범·굿즈 ·티켓  실매출  기 반  — 회 사  재 무  보유  BDF 잔 액 에서  연간 IP 카 탈 로 그  매출 의  3%를 영구  소 각 . 토큰 시
+장 가격  비연동 · 자율적  시장  매 수  없 음 .DUAL BURN · MECHANISM B
+
+물물거래  결 제  기 반  번  (P2P Payment Burn)
+BDF가  서비 스 ·상 품 · 콘텐 츠  이 용  대 금 으 로  결 제 되 는  물물 거 래 에  사 용 될  때 마 다  이용 대금 의  3%가 해당  거래  시
+점에서  영구 소각. 결제  행위와  직 접  결 합 된  디플레 이 션  구조 로  가 격  변 동성과  분 리 된  운영  메트 릭 .
+⚠ TOKEN-LINE INDEPENDENCE NOTICE
+BDF 유틸 리 티  토 큰 과  Music Pie De-PIN 노 드  풀  토 큰 은  두 개의  독립 적 이고  교 환  불 가 한  토 큰  라 인. 발행  주체 · 시점 · 배분  로 직 · 거 버 넌 스가  완 전  분 리 되 어  한쪽의  희 소성 · 유 틸 리 티 · 의 결권 이  다 른  쪽 을  보 증 하지  않 습니 다.
+BDF 보유 가  De-PIN 토 큰 에  대한  권 리 를  부여 하지  않 으 며 , 반 대도  마 찬 가지 . 두  라 인  모 두  BDF 백 서에  의해서만  운영 되 며  제 3 자 가  발행 자 · 수 탁 자 · 상대방 이  아 닙 니 다 .
+CONFIDENTIAL · BLOCK DAO FOUNDATION 28 / 29
+SECTION 12.0 · FOUNDATION-LEVEL ROADMAP
+BDF Foundation · 재단  사 업  로 드 맵AUDIT · EDUCATION · PAYMENTS · EXPERTISE ·
+INTERNATIONAL BODY
+재단 자체  사 업  — BDF 는  서포트  프 로 젝 트들  중  하 나
+★ SCOPE · 로 드 맵  범 위  명 시
+이 로드맵 은  Block DAO Foundation 자체  사 업  로 드 맵입니다  — 탈 중 앙 화  프 로 젝 트  심 사 · 국 제  인 증 · 교 육 · 플 랫 폼  운영으 로  구성 되 며 , BDF 는  이 를  서포트 하 는  프 로 젝 트  중  하 나입니 다 .
+각 Phase 는  Foundations 책 임 이  검 증 된  다 음  단계 로  넘 어 갈  때 마 다  점 진 적 으 로  분산 됩 니 다  — 단 일  운영자  의 존 에서  다 국적  국 제  기 구 로 의  전 환 을  위한  순 서  설계 .
+PHASE 1 · EARLY
+탈중앙화  프 로 젝 트  심 사
+· DASA 국 제  심 사  · 교 육  · 플 랫 폼
+DASA · INTERNATIONAL CERTIFICATION · EDUCATION ·
+PLATFORM
+탈중앙화  생태계 의  신 뢰  기 반  구 축  — 심 사  표 준  제정 · 국 제  인 증  체 계 · 교
+육 자료  단 일  플 랫 폼  운영
+DASA 표 준  제정  (Decentralized Assessment & Standards
+Authority) — 탈중앙 화  심 사 · 표 준  인 증  플 랫 폼 의  국 제  기 준  확립●
+탈중앙화  프 로 젝 트  심 사  운영 — BDF Foundation 자체  심 사  절 차  가
+동·검증된  프 로 젝 트  등 급 화●
+국제 인증  체 계  운영 — 다국적  전문 가  풀  참 여  + 글 로 벌  인 증  발 급  절
+차 확립●
+교육 프로 그 램  개 발 — 심사  기 준  교육  자 료 · 워 크 숍 · 전문 가  교 육  커 리
+큘럼 제작 · 운영●
+플랫폼  운영 — 심사  신 청 · 인 증  발 급 · 전문 가  매 칭 을  단 일  웹  플 랫 폼 으
+로 운영●
+운영 메트 릭  공개 — 전문가  참 여도 · 심 사  품질 · 플 랫 폼  활 성화  지 표 의
+정기 공개●PHASE 2 · MID
+결제 영역  확 장
++ 합의된  전문 가  확 장
+PAYMENT INFRA EXPANSION + EXPERT CONSENSUS SCALING
+검증된  심 사  기 반  위에서  결 제  인 프라  확 장  + 인 증 된  전문 가  풀 의  합의 적
+확장
+결제 영역  확 장 — 다중  결 제  라우 팅 · 통 화  결 제  settlements·stable
+내부 펀드  운영●
+결제 안정화  펀 드  운영 — 실매출 · 검 증  월 렛  기 반 의  내부  준 비 금  누 적
+운영●
+합의된  전문 가  확 장 — 검증된  인 증  전문 가 의  합의 된  참 여  절 차  운영●
+전문가  매 칭  시스 템 — 심사 · 플 랫 폼 · 결 제  검 증  각  영 역 별  전문 가  풀  자
+동 매칭●
+다국적  라우 팅 — 관할권별  결 제  채 널  다 중화  + 단 일  실 패 점  제거●
+전문가  보상  합의 — 공개  절 차 의  검 증 된  참 여도  기 반  보상 · 인 센 티브
+분배●PHASE 3 · LATE
+국제 기구 로 서의  성장
+— 글로벌  거 버 넌 스
+INTERNATIONAL BODY · GLOBAL GOVERNANCE
+재단이  단 일  운영  조 직 에서  다국적  국 제  기 구로 전환  — 글 로벌  거 버 넌 스
+단계로  분산
+국제 기구  등 록 — 다국적  협 의체  형 태 의  법 적 · 제도 적  등 록 · 인 정  추 진●
+글로벌  거 버 넌 스  표 준 — 탈중앙 화  프 로 젝 트  심 사 의  국 제  표 준  채 택  추
+진●
+국제 협의체  전 환 — 다국적  전문 가  합의 로  운영 하 는  협 의체  단계 로  전
+환●
+재단 권한  최 종  분산 — 합의  전문 가  집단 으 로  운영  책 임  합의  운영  방
+식으로  이 양●
+글로벌  파 트 너 십 — 국제  규 제  협 의체 · 표 준 화  기 구 · 학 술  기 관  정 식  협
+력 체결●
+자립형  국 제  기 구  완 성 — 단일  운영자  의 존 이  제거 된  자 립형  국 제  거 버
+넌스 완성●
+FOUNDATION 원 칙  · 단계적  분산
+BDF · De-PIN 및  모 든  토 큰  시 총 · 가 격 ·FDV 추 정과  무관한 Foundation 자체  사 업  운영  메트 릭 입니 다  — 단계 별  검 증 · 전문 가  합의 · 국 제  표 준  채 택 으 로  책 임 이  점 진 적 으 로  국 제  기 구 로  분산  이 양 됩 니 다 . 단 일  운영자에  의 존 하지  않 는  자 립형  거 버 넌 스  구조  완 성 .
+CONFIDENTIAL · BLOCK DAO FOUNDATION 29 / 29〉〉

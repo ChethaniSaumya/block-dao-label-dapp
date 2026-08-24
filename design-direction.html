@@ -1,0 +1,512 @@
+<title>Certificate-Led Redesign</title>
+<style>
+  :root {
+    /* Drawn from the Dealer Rights Certificate: deep navy ground, gold foil,
+       parchment ink. Deliberately single-theme — the identity IS the dark. */
+    --ground:     #070C18;
+    --ground-2:   #0B1222;
+    --panel:      #0E1728;
+    --panel-2:    #142038;
+    --gold:       #C8A24A;
+    --gold-lift:  #E9CE86;
+    --gold-deep:  #8A6B22;
+    --ink:        #ECE4D2;
+    --ink-soft:   #94A1B8;
+    --ink-dim:    #6B7891;
+    --hairline:   rgba(200,162,74,.22);
+    --hairline-2: rgba(200,162,74,.10);
+    --sheen: linear-gradient(135deg, #8A6B22 0%, #E9CE86 38%, #C8A24A 55%, #F5E6B8 72%, #8A6B22 100%);
+
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(200,162,74,.10), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 15%, rgba(60,110,190,.10), transparent 65%);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .foil {
+    background: var(--sheen);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--gold-lift);
+  }
+  @supports (-webkit-background-clip: text) or (background-clip: text) {
+    .foil { -webkit-text-fill-color: transparent; }
+  }
+
+  .eyebrow {
+    font-size: .68rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600;
+  }
+
+  /* ── Masthead with art-deco corner ticks ───────────────────────────── */
+  .masthead {
+    position: relative;
+    border: 1px solid var(--hairline);
+    background: linear-gradient(180deg, var(--panel), var(--ground-2));
+    padding: 2.75rem 2rem 2.25rem;
+    display: flex; flex-direction: column; gap: 1rem; align-items: center;
+    text-align: center;
+  }
+  .masthead::before, .masthead::after {
+    content: ""; position: absolute; width: 26px; height: 26px;
+    border: 1px solid var(--gold); opacity: .55;
+  }
+  .masthead::before { top: 9px; left: 9px; border-right: 0; border-bottom: 0; }
+  .masthead::after  { bottom: 9px; right: 9px; border-left: 0; border-top: 0; }
+
+  h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(1.9rem, 5.5vw, 3rem); line-height: 1.1;
+    margin: 0; letter-spacing: .01em; text-wrap: balance;
+  }
+  .rule {
+    width: 100%; max-width: 22rem; height: 1px; border: 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: .25rem 0;
+  }
+  .lede { margin: 0; color: var(--ink-soft); max-width: 40rem; font-size: 1.02rem; }
+  .prepared {
+    font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+
+  h2 {
+    font-family: var(--serif); font-weight: 400; font-size: 1.6rem;
+    margin: 0; letter-spacing: .01em;
+  }
+  h3 { margin: 0; font-size: 1rem; font-weight: 650; letter-spacing: -.005em; }
+  p  { margin: 0; }
+
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+  .sec-head { display: flex; flex-direction: column; gap: .35rem; border-bottom: 1px solid var(--hairline-2); padding-bottom: .8rem; }
+
+  .panel {
+    border: 1px solid var(--hairline-2);
+    background: linear-gradient(180deg, var(--panel), rgba(14,23,40,.55));
+    padding: 1.3rem 1.4rem;
+    display: flex; flex-direction: column; gap: .7rem;
+  }
+  .panel.flag { border-left: 2px solid var(--gold); }
+  .panel p, .panel li { color: var(--ink-soft); font-size: .95rem; }
+  .panel strong { color: var(--ink); font-weight: 600; }
+  .panel ul { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .4rem; }
+
+  /* ── Palette comparison ────────────────────────────────────────────── */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .swatchset { border: 1px solid var(--hairline-2); padding: 1.1rem; display: flex; flex-direction: column; gap: .75rem; }
+  .swatchset.now { background: #F7F8FA; }
+  .swatchset.now .label, .swatchset.now .cap { color: #4A5163; }
+  .swatchset.next { background: linear-gradient(180deg, var(--panel), var(--ground-2)); }
+  .label { font-size: .66rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .chips { display: flex; gap: .4rem; flex-wrap: wrap; }
+  .chip { width: 2.5rem; height: 2.5rem; border-radius: 2px; border: 1px solid rgba(0,0,0,.15); }
+  .cap { font-size: .78rem; color: var(--ink-soft); line-height: 1.5; }
+
+  /* ── Priority-ranked section cards ─────────────────────────────────── */
+  .items { display: flex; flex-direction: column; gap: .8rem; }
+  .item {
+    display: grid; grid-template-columns: 2.6rem 1fr; gap: 1rem;
+    border: 1px solid var(--hairline-2);
+    background: linear-gradient(180deg, var(--panel), rgba(14,23,40,.4));
+    padding: 1.1rem 1.25rem;
+  }
+  .rank {
+    font-family: var(--serif); font-size: 1.5rem; line-height: 1.2;
+    color: var(--gold); font-variant-numeric: tabular-nums; text-align: right;
+  }
+  .item-body { display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
+  .item-top { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; }
+  .route {
+    font-family: var(--mono); font-size: .76rem; color: var(--gold);
+    background: rgba(200,162,74,.10); border: 1px solid var(--hairline-2);
+    padding: .08rem .4rem; border-radius: 2px;
+  }
+  .tier {
+    margin-left: auto; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase;
+    padding: .16rem .5rem; border: 1px solid var(--hairline); color: var(--gold);
+    white-space: nowrap;
+  }
+  .tier.rebuild { background: var(--gold); color: #1A1206; border-color: var(--gold); font-weight: 700; }
+  .tier.restyle { background: rgba(200,162,74,.14); }
+  .tier.light   { color: var(--ink-dim); border-color: rgba(148,161,184,.22); }
+  .item p { font-size: .93rem; color: var(--ink-soft); }
+  .item .do { color: var(--ink); }
+  .item .do b { color: var(--gold-lift); font-weight: 600; }
+
+  /* ── Phases ───────────────────────────────────────────────────────── */
+  .phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .9rem; }
+  .phase { border: 1px solid var(--hairline-2); background: var(--panel); padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: .45rem; }
+  .phase .n { font-family: var(--serif); color: var(--gold); font-size: 1.2rem; }
+  .phase p { font-size: .87rem; color: var(--ink-soft); }
+
+  .qa { display: flex; flex-direction: column; gap: .8rem; }
+  .q { display: grid; grid-template-columns: auto 1fr; gap: .8rem; align-items: start;
+       border-bottom: 1px solid var(--hairline-2); padding-bottom: .8rem; }
+  .q:last-child { border-bottom: 0; }
+  .q .mark { font-family: var(--serif); color: var(--gold); font-size: 1.05rem; line-height: 1.5; }
+  .q p { font-size: .93rem; color: var(--ink-soft); }
+  .q strong { color: var(--ink); }
+
+  code { font-family: var(--mono); font-size: .86em; color: var(--gold-lift); }
+
+  footer {
+    border-top: 1px solid var(--hairline-2); padding-top: 1.4rem;
+    text-align: center; color: var(--ink-dim); font-size: .82rem;
+    display: flex; flex-direction: column; gap: .5rem; align-items: center;
+  }
+  .seal {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid var(--gold); display: grid; place-items: center;
+    font-family: var(--serif); color: var(--gold); font-size: 1.1rem;
+  }
+
+  @media (max-width: 34rem) {
+    .compare { grid-template-columns: 1fr; }
+    .item { grid-template-columns: 2rem 1fr; gap: .75rem; padding: 1rem; }
+    .tier { margin-left: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">Block Label · Web 3.0 Entertainment</div>
+    <h1 class="foil">A Certificate-Led Identity</h1>
+    <hr class="rule">
+    <p class="lede">
+      Where block-label.com should change so the website and the Dealer Rights
+      Certificate read as one brand — reviewed against the current live site,
+      ranked by impact.
+    </p>
+    <div class="prepared">Design proposal · prepared for review · August 2026</div>
+  </header>
+
+  <!-- ── The gap ──────────────────────────────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">01 — The gap</div>
+      <h2>Two different brands today</h2>
+    </div>
+
+    <div class="compare">
+      <div class="swatchset now">
+        <div class="label" style="color:#8A6B22">Website now</div>
+        <div class="chips">
+          <div class="chip" style="background:#FFFFFF"></div>
+          <div class="chip" style="background:#F2F4F8"></div>
+          <div class="chip" style="background:#2563EB"></div>
+          <div class="chip" style="background:#1F2430"></div>
+        </div>
+        <p class="cap">
+          White surfaces, blue accent, geometric sans, flat cards. Reads as a
+          clean B2B technology company — credible, but interchangeable with a
+          hundred SaaS sites.
+        </p>
+      </div>
+      <div class="swatchset next">
+        <div class="label">Certificate — and where the site should go</div>
+        <div class="chips">
+          <div class="chip" style="background:#070C18"></div>
+          <div class="chip" style="background:#142038"></div>
+          <div class="chip" style="background:linear-gradient(135deg,#8A6B22,#E9CE86,#C8A24A)"></div>
+          <div class="chip" style="background:#ECE4D2"></div>
+        </div>
+        <p class="cap">
+          Deep navy ground, gold foil, engraved serif display, hairline rules,
+          seals and corner ornament. Reads as issued, authenticated, and
+          collectible — a credential, not a product page.
+        </p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p>
+        The certificate's authority comes from four devices, and every one of
+        them can be carried into a website without literal copying:
+        <strong>a dark ground that makes gold read as metal</strong>,
+        <strong>an engraved serif for display type</strong> against a plain sans
+        for reading, <strong>hairline rules and corner ornament</strong> instead
+        of drop shadows, and <strong>seals and verification marks</strong> used
+        as real UI, not decoration.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Ranked recommendations ───────────────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">02 — What to change, in priority order</div>
+      <h2>Section by section</h2>
+      <p class="cap">Ranked by how much identity each one carries per hour spent.</p>
+    </div>
+
+    <div class="items">
+
+      <div class="item">
+        <div class="rank">1</div>
+        <div class="item-body">
+          <div class="item-top"><h3>The design system itself</h3><span class="tier rebuild">Rebuild</span></div>
+          <p>
+            Colour tokens, type pairing, button styles, surfaces, focus states.
+            Nothing else should be touched first — every page inherits from here,
+            and doing it once prevents a patchwork of half-restyled screens.
+          </p>
+          <p class="do"><b>Do:</b> invert to the navy ground; introduce gold as the single accent; pair an engraved serif for headings with the existing sans for body; replace shadow-based elevation with hairline borders and a low gold glow.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="rank">2</div>
+        <div class="item-body">
+          <div class="item-top"><h3>Homepage hero</h3><span class="route">/</span><span class="tier rebuild">Rebuild</span></div>
+          <p>
+            The certificate already contains the perfect hero image: a glowing
+            globe wrapped in a network, seen from space. The site's hero is
+            currently text and four competing buttons on white.
+          </p>
+          <p class="do"><b>Do:</b> dark cosmic ground echoing the certificate art; gold serif headline; cut the four calls-to-action down to two primary (dealer partnership, BDL token) with the rest demoted.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="rank">3</div>
+        <div class="item-body">
+          <div class="item-top"><h3>NFT certificate &amp; authentication</h3><span class="route">NFT 증서</span><span class="tier rebuild">Rebuild</span></div>
+          <p>
+            This is where the identity and the product are the same thing. The
+            certificate should be shown at full size, framed, with its serial
+            system, the four issuance rounds and the holder's benefits presented
+            as an official record.
+          </p>
+          <p class="do"><b>Do:</b> make the artwork the hero rather than a thumbnail; render the serial in the certificate's own typographic style; treat the verification result as a stamped seal, not a green tick.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="rank">4</div>
+        <div class="item-body">
+          <div class="item-top"><h3>Dealer programme</h3><span class="route">/dealers</span><span class="route">/dealer-inquiry</span><span class="tier rebuild">Rebuild</span></div>
+          <p>
+            The certificate is literally titled <em>Dealer Rights Certificate</em>
+            and names the holder an authorised dealer. These pages are the
+            conversion path to owning one, so they carry more of the promise
+            than any other page on the site.
+          </p>
+          <p class="do"><b>Do:</b> lead with the certificate itself as the thing being earned; present tiers and margins as an engraved schedule; give the application form the weight of an application, not a contact box.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="rank">5</div>
+        <div class="item-body">
+          <div class="item-top"><h3>Dealer dashboard</h3><span class="route">/dashboard</span><span class="route">/sales</span><span class="route">/referrals</span><span class="route">/ranking</span><span class="tier restyle">Restyle</span></div>
+          <p>
+            Where dealers spend their actual time. A members' area is where
+            "premium" either holds up or collapses — most brands stop at the
+            marketing pages and leave the logged-in experience generic.
+          </p>
+          <p class="do"><b>Do:</b> dark data surfaces, gold only for emphasis and positive movement, tabular figures, ranking presented as standings rather than a plain table.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="rank">6</div>
+        <div class="item-body">
+          <div class="item-top"><h3>BDL token &amp; airdrop</h3><span class="route">/token</span><span class="route">/airdrop</span><span class="tier restyle">Restyle</span></div>
+          <p>
+            These pages hand users over to the separate Web3 app. Right now the
+            two properties look unrelated, so the handover feels like leaving the
+            brand.
+          </p>
+          <p class="do"><b>Do:</b> restyle to the new system and match the Web3 app's shell exactly, so crossing between them is invisible.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="rank">7</div>
+        <div class="item-body">
+          <div class="item-top"><h3>Company, business &amp; technology</h3><span class="route">/about</span><span class="route">/business</span><span class="route">/technology/*</span><span class="route">/content</span><span class="tier restyle">Restyle</span></div>
+          <p>
+            Four technology sub-pages (IP protection, LIDO, MORIPE, Music PIE)
+            plus company and business. Long-form content that mostly needs the
+            system applied consistently rather than new layouts.
+          </p>
+          <p class="do"><b>Do:</b> one repeatable section masthead with an eyebrow, serif heading and gold hairline; keep body text on the plain sans for readability.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="rank">8</div>
+        <div class="item-body">
+          <div class="item-top"><h3>Sign-in, contact &amp; application forms</h3><span class="route">/auth</span><span class="route">/contact</span><span class="route">/tablet-inquiry</span><span class="tier restyle">Restyle</span></div>
+          <p>
+            Forms are trust moments. On a dark ground, badly handled inputs are
+            the fastest way to look cheap.
+          </p>
+          <p class="do"><b>Do:</b> inset dark fields with hairline borders, a gold focus ring, generous spacing, and errors that explain the fix.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="rank">9</div>
+        <div class="item-body">
+          <div class="item-top"><h3>News, notices &amp; careers</h3><span class="route">/news</span><span class="route">/notices</span><span class="route">/careers</span><span class="tier light">Light touch</span></div>
+          <p>Inherit the system. No structural work needed.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="rank">10</div>
+        <div class="item-body">
+          <div class="item-top"><h3>Footer</h3><span class="tier light">Light touch</span></div>
+          <p>
+            Currently a phone number and four social links — thin for a company
+            asking people to become authorised dealers.
+          </p>
+          <p class="do"><b>Do:</b> a proper foundation footer carrying the seal mark, company particulars, policies and the four languages.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Reorganisation ───────────────────────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">03 — Reorganisation, not just restyling</div>
+      <h2>Two structural notes</h2>
+    </div>
+
+    <div class="panel flag">
+      <h3>The navigation is carrying nine top-level items</h3>
+      <p>
+        Company, Business, Technology, Content, NFT Certificate, Contact,
+        Airdrop, Sign in, Sign up. Three of those — certificate, airdrop and
+        token — are one story: the ecosystem a dealer joins. Grouping them under
+        a single <strong>Ecosystem</strong> heading shortens the bar and makes
+        the certificate the destination rather than one option among many.
+      </p>
+    </div>
+
+    <div class="panel flag">
+      <h3>Authenticity should be a running motif, not one badge</h3>
+      <p>
+        The certificate carries "Authenticity Verified" and a BSC mark. The site
+        verifies certificates but does not otherwise show that it is
+        blockchain-backed. Used consistently — on dealer profiles, on the
+        certificate page, beside token figures — that verification mark becomes
+        the visual signature that ties every page back to the certificate.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Sequence ─────────────────────────────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">04 — Suggested sequence</div>
+      <h2>Order of work</h2>
+    </div>
+    <div class="phases">
+      <div class="phase">
+        <div class="n">I</div>
+        <h3>Design system</h3>
+        <p>Tokens, type, buttons, forms, surfaces. Signed off on two sample screens before anything rolls out.</p>
+      </div>
+      <div class="phase">
+        <div class="n">II</div>
+        <h3>The showcase pages</h3>
+        <p>Homepage hero, NFT certificate, dealer programme — the three that carry the identity.</p>
+      </div>
+      <div class="phase">
+        <div class="n">III</div>
+        <h3>Members' area</h3>
+        <p>Dashboard, sales, referrals, ranking. Where the promise has to hold up daily.</p>
+      </div>
+      <div class="phase">
+        <div class="n">IV</div>
+        <h3>Everything else</h3>
+        <p>Content pages, forms, news, footer, and matching the Web3 app's shell.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Questions ────────────────────────────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">05 — Before starting</div>
+      <h2>Questions worth settling</h2>
+    </div>
+    <div class="qa">
+      <div class="q">
+        <span class="mark">i</span>
+        <p>
+          <strong>The certificate and the smart contract disagree on the name.</strong>
+          The artwork reads "Dealer Rights Certificate — Authorized Dealer", while
+          the deployed collection is named "Block Label Creator DAO Certificate"
+          with the symbol <code>BLDAO</code>. Wallets and marketplaces show the
+          contract name, so buyers would see a different product from the one on
+          their certificate. Which is correct? It is a single transaction to
+          change, with no redeployment.
+        </p>
+      </div>
+      <div class="q">
+        <span class="mark">ii</span>
+        <p>
+          <strong>Certificate features already exist in two places.</strong>
+          The website has NFT certificate authentication, NFT wholesale and
+          dealer settlement in its admin area; the Web3 app has its own
+          certificate and issuance pages. Deciding which owns what avoids
+          building the same thing twice and paying for it twice.
+        </p>
+      </div>
+      <div class="q">
+        <span class="mark">iii</span>
+        <p>
+          <strong>Four languages.</strong> Korean, English, Japanese and Chinese
+          all appear in the site. A serif display face has to carry all four —
+          the type choice needs testing in Korean and Japanese specifically,
+          since an English-only pairing will fall apart there.
+        </p>
+      </div>
+      <div class="q">
+        <span class="mark">iv</span>
+        <p>
+          <strong>How far does "dark" go?</strong> Full dark identity, or dark for
+          hero and ecosystem pages with lighter surfaces for long-form reading?
+          Worth deciding at the system stage rather than page by page.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="seal">B</div>
+    <div>Prepared for Block Label Foundation · design proposal, not a live page</div>
+  </footer>
+
+</div>
