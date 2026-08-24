@@ -1,5 +1,5 @@
 /**
- * Central on-chain contract config for the BDL Phase-1 dApp.
+ * Central on-chain contract config for the BDF Phase-1 dApp.
  * Addresses come from env (filled after `deploy_blocklabel.js`); ABIs are the
  * minimal human-readable slices the UI needs. Used with wagmi's
  * useReadContract / useWriteContract (viem parses the human-readable ABI).
@@ -14,7 +14,7 @@ export const ADDR = {
   token: asAddr(env.VITE_TOKEN_CONTRACT_ADDRESS),
   distributor: asAddr(env.VITE_DISTRIBUTOR_ADDRESS),
   teamLockup: asAddr(env.VITE_TEAMLOCKUP_ADDRESS),
-  bdlToken: asAddr(env.VITE_BDL_ADDRESS || env.VITE_WKEYDAO2_ADDRESS),
+  bdlToken: asAddr(env.VITE_BDF_ADDRESS || env.VITE_WKEYDAO2_ADDRESS),
 } as const;
 
 export const erc20Abi = parseAbi([
@@ -47,5 +47,5 @@ export const teamLockupAbi = parseAbi([
 export const demoMintAbi = parseAbi(["function mint(address to, uint256 amount)"]);
 export const DEMO_MODE = import.meta.env.VITE_DEMO_MODE === "true";
 
-/** BDL uses 18 decimals */
-export const BDL_DECIMALS = 18;
+/** BDF uses 18 decimals */
+export const BDF_DECIMALS = 18;

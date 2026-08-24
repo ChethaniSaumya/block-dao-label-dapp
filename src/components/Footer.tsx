@@ -9,15 +9,15 @@ import { BRAND } from "@/lib/brand";
  */
 const COMPANY = [
   { label: "About Block Label", to: "/about" },
-  { label: "Business Areas", to: "/business" },
+  { label: "Foundation", to: "/business" },
   { label: "Technology", to: "/technology" },
-  { label: "Content", to: "/content" },
+  { label: "Roadmap", to: "/roadmap" },
   { label: "Careers", to: "/careers" },
 ];
 
 const ECOSYSTEM = [
   { label: "Dealer Programme", to: "/dealers" },
-  { label: "BDL Token", to: "/token" },
+  { label: "BDF Token", to: "/token" },
   { label: "News", to: "/news" },
   { label: "Notices", to: "/notices" },
 ];

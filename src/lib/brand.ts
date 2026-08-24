@@ -20,24 +20,24 @@
  */
 export const BRAND = {
   /** Full token / project name (per whitepaper). Used in copy & meta titles. */
-  name: "Block DAO Label",
+  name: "Block DAO Foundation",
   /** Ticker / symbol shown next to amounts. */
-  symbol: "BDL",
+  symbol: "BDF",
   /** Short name for tight spaces (header, footer). Matches the logo wordmark. */
-  shortName: "Block Label",
+  shortName: "Block DAO",
   /** Legal foundation name. */
-  foundation: "Block Label Foundation",
+  foundation: "Block DAO Foundation",
   /** Official logo (served from /public). Used in navbar, footer, share cards. */
-  logo: "/block-label-logo.png",
+  logo: "/block-label-logo-new.png",
   /** Single-letter mark, fallback when the logo image is unavailable. */
   initial: "B",
   /** Copyright year shown in the footer. */
   copyrightYear: "2026",
   /** One-line tagline used in hero / share cards. */
-  tagline: "Technology and Art, Creating New Entertainment",
+  tagline: "Consensus Creates New Value",
   /** Meta description (SEO / Open Graph). Tokens are resolved on use. */
   description:
-    "{{BRAND}} ({{SYMBOL}}) is the native utility and governance token of the Block Label Foundation ecosystem on BNB Chain — a fixed supply of 10,000,000,000 BDL with no minting, community-first distribution across the Fan DAO and Creator DAO, and a rules-based buyback & burn.",
+    "{{BRAND}} ({{SYMBOL}}) establishes a new operating model for a decentralized ecosystem — moving past minority operator monopolies through decentralized project review and DASA standards.",
 } as const;
 
 /** Resolve `{{BRAND}}` / `{{SYMBOL}}` tokens in any string. */

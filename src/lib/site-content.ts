@@ -75,157 +75,47 @@ export interface FormPage extends SitePage {
 
 export const BUSINESS: SitePage = {
   slug: "business",
-  nav: "Business Areas",
-  eyebrow: "BUSINESS",
-  title: "Business Areas",
-  intro: "A comprehensive content IP company spanning music, video, and publishing.",
+  nav: "Foundation",
+  eyebrow: "FOUNDATION",
+  title: "Block DAO Foundation",
+  intro: "Building the trust substrate for decentralized ecosystems through objective project review, international certification, and education.",
   sections: [
     {
       items: [
         {
-          title: "Music Production",
-          body: "Overseeing the entire process of music IP from discovering new artists to album production and global distribution. Supporting artist growth with professional management systems.",
-          meta: "Single/Full Album Production · Global Songwriter Collaboration · Live Performance Planning",
+          title: "DASA Standards",
+          body: "Decentralized Assessment & Standards Authority (DASA) — establishing the international baseline for decentralized review and certification.",
+          meta: "International Baseline · Project Review · Objective Grading",
         },
         {
-          title: "Short-form Drama",
-          body: "Mass-producing high-quality short dramas with 90% cost reduction by adopting AI production technology. Presenting ultra-compressed immersive content of 1-2 minute episodes.",
-          meta: "240+ Short Drama Lineup · AI Hybrid Production · OTT Platform Distribution",
+          title: "International Certification",
+          body: "Multinational expert pool participation and global certification issuance procedures to verify decentralized projects.",
+          meta: "Expert Consensus · Certification Issuance · Verification",
         },
         {
-          title: "Transmedia IP",
-          body: "Executing OSMU (One Source Multi Use) strategy expanding a single original IP into webtoons, web novels, short dramas, movies, and more.",
-          meta: "30 Webtoons / 4 Web Novels · Original-based Video Adaptation · Global IP Licensing",
+          title: "Education Program",
+          body: "Curricula on review standards, workshops, and expert education to foster a mature decentralized ecosystem.",
+          meta: "Workshops · Expert Education · Curriculum",
         },
         {
-          title: "AI Video Showcase",
-          body: "Participating in global film festivals and technology showcases with high-quality videos produced using cutting-edge AI technology.",
-          meta: "Global Film Festival Entry · AI Technology Showcase · Brand Awareness Expansion",
+          title: "Platform Operations",
+          body: "Review applications, certification issuance, and expert matching unified on a single web platform.",
+          meta: "Single Platform · Expert Matching · Transparency",
         },
       ],
     },
     {
-      eyebrow: "CONTESTS & CHALLENGES",
-      title: "Next-Gen Contest Model",
-      body: "Block Label presents a new content production model where demand-side brands and small business owners connect directly with supply-side creators. Each contest gathers multiple entries from many creators, and a single IP discovered there can expand step by step into advertising, AI video, short drama, OST, web novels, and webtoons. All participants receive entry fees, and outstanding works earn additional prizes.",
+      eyebrow: "FLAGSHIP PROJECT",
+      title: "Block Label Project (De-PIN)",
+      body: "Block Label is the Foundation's first project case — a De-PIN hardware network utilizing Music Pie streaming nodes built on Samsung Knox tablet PCs. It operates under the Foundation's governance to demonstrate real-world utility.",
       items: [
         {
-          title: "Guaranteed Entry Fee",
-          body: "A fair reward structure where all participants receive an entry fee for entry, regardless of selection.",
+          title: "Music Pie Nodes",
+          body: "Streaming nodes running on Samsung Knox security platforms to guarantee the trustworthiness of real listening behavior.",
         },
         {
-          title: "IP Expansion",
-          body: "An OSMU structure where a single IP expands into ads, video, drama, music, and literature.",
-        },
-        {
-          title: "Demand-Supply Direct",
-          body: "Brands and creators meet directly on the platform, reducing intermediary costs and improving efficiency.",
-        },
-        {
-          title: "Many Participants",
-          body: "Many creators join one contest, and multiple entries can be compared and selected.",
-        },
-      ],
-    },
-    {
-      title: "Contest Formats",
-      items: [
-        {
-          title: "Ad Contest",
-          body: "When a small business registers an ad budget, creators produce and submit SNS short-form ad videos. 1st and 2nd place winners receive additional prizes.",
-          meta: "SNS Shorts · Brand Promotion · Prizes",
-        },
-        {
-          title: "AI Video Contest",
-          body: "A contest to produce high-quality video content using AI production technology. Offers opportunities to connect with film festivals and tech showcases.",
-          meta: "AI Generation · Video Production · Showcase",
-        },
-        {
-          title: "Short-form Drama Contest",
-          body: "A contest for ultra-compressed 1-2 minute short drama scripts and videos. Outstanding works are connected to OTT platform distribution and official production.",
-          meta: "Short Drama · OTT · IP Expansion",
-        },
-        {
-          title: "OST & Music IP Contest",
-          body: "A contest for OSTs and music IP that match characters and worldviews. Discovers works that can expand from tracks into story IP.",
-          meta: "OST · Music IP · Character Song",
-        },
-        {
-          title: "Web Novel & Webtoon Contest",
-          body: "A contest for creative works that can expand a single original IP into web novels and webtoons. Selects work that becomes the starting point for OSMU strategy.",
-          meta: "Web Novel · Webtoon · Original IP",
-        },
-      ],
-    },
-    {
-      title: "Example: Ad Contest Operating Structure",
-      body: "When a small business registers a 500,000 KRW ad budget, 20 participants each receive 10,000 KRW entry fees and produce short ad videos. Additional prizes of 200,000 KRW for 1st place and 100,000 KRW for 2nd place are awarded.",
-      stats: [
-        { value: "₩500,000", label: "Total Ad Budget" },
-        { value: "₩10,000 × 20", label: "Entry Fee" },
-        { value: "₩200,000 / ₩100,000", label: "1st / 2nd Place Prize" },
-      ],
-    },
-    {
-      eyebrow: "LICENSE HOLDERS",
-      title: "The Role of License Holders",
-      body: "License holders are the main actors of IP wholesale distribution, contributing to the ecosystem while sharing in its outcomes and governance.",
-    },
-    {
-      eyebrow: "DECENTRALIZED IP SUPPLY & PERMISSIONING",
-      title: "How IP Enters the Block Label Ecosystem",
-      body: "License holders supply diverse IP — music, characters, brands, and content — into the ecosystem and grant purpose-specific permissions, creating the starting point for distribution and utilization.",
-      steps: [
-        { title: "IP Registration", body: "Register owned IP into the ecosystem." },
-        { title: "Permission Setup", body: "Define purpose and scope of use." },
-        { title: "Distributed Connection", body: "Channel-by-channel distribution and expansion." },
-        { title: "Usage Management", body: "Transparent tracking of history and flow." },
-      ],
-    },
-    {
-      eyebrow: "WHY DISTRIBUTED DISTRIBUTION",
-      title: "Beyond Monopolistic Distribution",
-      body: "Unlike traditional centralized distribution, Block Label pursues an ecosystem where both production and distribution are decentralized. IP is not locked into a single channel but expanded simultaneously across platforms, partners, shops, and communities.",
-      steps: [
-        { title: "Legacy Distribution", body: "Rights and revenue concentrated in a few." },
-        { title: "Block Label Model", body: "Production and distribution decentralized together." },
-        { title: "Simultaneous Expansion", body: "Growth across multiple channels at once." },
-        { title: "Shared Outcomes", body: "Participants and outcomes connected together." },
-      ],
-    },
-    {
-      eyebrow: "WHY BLOCKCHAIN-BASED PRODUCTION & DISTRIBUTION RECORDS",
-      title: "On-chain History That Reduces Side Effects",
-      body: "By linking production, distribution, and provenance on-chain, Block Label reduces illegal production and unauthorized sales of IP, mitigates the side effects of gray-market distribution, and ensures rewards flow back to actual creators.",
-      steps: [
-        { title: "Production Record", body: "Log IP creation and manufacturing on-chain." },
-        { title: "Distribution Tracking", body: "Transparently verify distribution routes and sales flow." },
-        { title: "Illicit Activity Prevention", body: "Curb unauthorized sales, scalping, and gray-market distribution." },
-        { title: "Contributor Rewards", body: "Return value to real creators and participants." },
-      ],
-    },
-    {
-      steps: [
-        {
-          title: "Subject of IP Wholesale Distribution",
-          body: "License holders act as the principal of IP wholesale distribution and serve as core partners of the content ecosystem.",
-        },
-        {
-          title: "Channel & Network-based Distribution",
-          body: "Each holder distributes IP products effectively through their own independent channels and global networks.",
-        },
-        {
-          title: "Direct Sales Margin",
-          body: "License holders generate direct sales margins from the revenue produced by their distribution activities.",
-        },
-        {
-          title: "Contributor Pool Reflow",
-          body: "5% of project outcomes flows back to the active contributor pool, ensuring sustainable participant participation.",
-          meta: "5%",
-        },
-        {
-          title: "DAO Governance Participation",
-          body: "Holders participate directly in decision-making and exercise authority within a transparent DAO governance structure.",
+          title: "Dual Token Economy",
+          body: "BDF serves as the foundation utility token, while Music Pie De-PIN operates its own hardware-mined token independently.",
         },
       ],
     },
@@ -235,110 +125,52 @@ export const BUSINESS: SitePage = {
 export const TECHNOLOGY: SitePage = {
   slug: "technology",
   nav: "Technology",
-  eyebrow: "TECHNOLOGY",
-  title: "Tech Innovation",
+  eyebrow: "INFRASTRUCTURE",
+  title: "Decentralized Infrastructure",
   intro:
-    "Achieving efficiency and transparency in the entertainment industry simultaneously with AI and blockchain.",
+    "The Foundation scales through multi-routing payment infrastructures and expert consensus matching.",
   sections: [
     {
       items: [
         {
-          title: "AI Production System",
-          body: "Introducing AI across the entire production process of video, music, and images, reducing costs by 90% and securing 10x more IPs per budget.",
+          title: "Consented Expert Scaling",
+          body: "Verified experts join through opened participation procedures, ensuring robust and objective evaluations of all projects.",
         },
         {
-          title: "Blockchain Copyright Protection",
-          body: "Immutably recording creation time and rights with on-chain timestamping, securing global legal protection through dual registration with KOMCA and US Copyright Office.",
+          title: "Expert Matching System",
+          body: "Automatic matching of expert pools across review, platform, and payment verification to ensure no single point of failure.",
         },
         {
-          title: "Smart Contract Settlement",
-          body: "Revenue is automatically and transparently distributed through smart contracts. Innovating the settlement process from 6-12 months to real-time.",
+          title: "Multinational Routing",
+          body: "Jurisdiction-by-jurisdiction payment-channel diversification for stability and trust.",
         },
-        {
-          title: "AI IP Valuation",
-          body: "AI analysis engine analyzes similar genre data and participant metrics to pre-assess the potential market value of IPs before production.",
-        },
-      ],
-    },
-    {
-      stats: [
-        { value: "-90%", label: "AI Production Cost Reduction" },
-        { value: "10x", label: "IP Output per Same Budget" },
-        { value: "5-10x", label: "ROI vs Traditional Media" },
       ],
     },
   ],
 };
 
 export const CONTENT: SitePage = {
-  slug: "content",
-  nav: "Content",
-  eyebrow: "CONTENT",
-  title: "Content Production Direction",
-  intro: "Maximizing production efficiency with AI technology and creating diverse original IPs.",
+  slug: "roadmap",
+  nav: "Roadmap",
+  eyebrow: "FOUNDATION ROADMAP",
+  title: "Progressive Decentralization",
+  intro: "The Foundation evolves from a single operating organization into a multinational consultative body.",
   sections: [
     {
       items: [
         {
-          title: "Music IP",
-          body: "We plan to produce original music IPs across various genres through singles, full albums, and global songwriter collaborations.",
+          title: "Phase 1: Early",
+          body: "Building the trust substrate — review standards, international certification, education content, and single-platform operations.",
         },
         {
-          title: "Short Drama",
-          body: "We plan and produce ultra-compressed immersive short drama series with 1-2 minute episodes by introducing AI hybrid production methods.",
+          title: "Phase 2: Mid",
+          body: "Build on a verified review base — payment-infrastructure expansion plus consented scaling of the certified expert pool.",
         },
         {
-          title: "Transmedia IP",
-          body: "We diversify content through OSMU strategy, expanding a single original IP into webtoons, web novels, short dramas, movies, and more.",
+          title: "Phase 3: Late",
+          body: "Growth as an international body — global governance through distribution and autonomous international governance.",
         },
       ],
-    },
-    {
-      title: "Original Creator Protection Technology in Development",
-      body: "We are developing our own technology to protect the rights of original creators when generating AI-based content from references. Our goal is to recognize creators' contributions and build a fair compensation system.",
-    },
-    {
-      eyebrow: "EFFICIENCY",
-      title: "Why More Efficient Than Traditional Entertainment",
-      body: "While the traditional entertainment model heavily relied on a single artist, a single work, and a single box-office result, our Transmedia IP strategy is a structure that amplifies value — not merely recycling content — by multi-layering a single IP.",
-      items: [
-        {
-          title: "Traditional Entertainment Model",
-          body: "Heavily relies on a single artist, a single work, and a single box-office result.",
-        },
-        {
-          title: "Transmedia IP Strategy",
-          body: "Multi-layers a single IP to create value amplification, not just content recycling.",
-        },
-      ],
-    },
-    {
-      items: [
-        { title: "Multi-format Expansion", body: "An IP created once expands into multiple formats." },
-        { title: "Repeated Consumption", body: "Repeatedly consumed across multiple markets and platforms." },
-        { title: "Longer Lifecycle & Broader Reach", body: "Secures a longer lifecycle and broader fan touchpoints." },
-      ],
-    },
-    {
-      body: "This is precisely why it is stronger than traditional entertainment.",
-    },
-    {
-      eyebrow: "REVENUE STRUCTURE",
-      title: "Multi-Layer Revenue from a Single IP",
-      body: "In the traditional model, if one work underperforms, the recovery structure is easily broken. In contrast, the OSMU strategy expands a single source IP into various formats, generating revenue from multiple touchpoints without relying on the success of a single release.",
-      items: [
-        {
-          title: "Traditional Model",
-          body: "If one work underperforms, the recovery structure is easily broken.",
-        },
-        {
-          title: "OSMU Strategy",
-          body: "Expands a single source IP into various formats, generating revenue from multiple touchpoints without relying on the success of a single release.",
-        },
-      ],
-    },
-    {
-      body: "This is a structure where one IP simultaneously creates multiple formats, multiple markets, and multiple revenue streams.",
     },
   ],
 };
@@ -542,11 +374,11 @@ export const DEALERS: SitePage = {
   ],
 };
 
-/* ── NFT Certificate + BDL Token (merged, as on the live site) ── */
+/* ── NFT Certificate + BDF Token (merged, as on the live site) ── */
 
 export const TOKEN: SitePage = {
   slug: "token",
-  nav: "BDL Token",
+  nav: "BDF Token",
   eyebrow: "NFT CERTIFICATE",
   title: "NFT Certificate",
   intro:
@@ -567,8 +399,8 @@ export const TOKEN: SitePage = {
           body: "The certificate is kept directly in the dealer's own wallet. Ownership and control of the asset always remain with the dealer.",
         },
         {
-          title: "BDL Mining Rights",
-          body: "BDL is not a token used simply by holding the NFT certificate — it is a shared utility token anyone in the ecosystem can use. Only NFT certificate holders are granted the right to mine BDL; this does not guarantee returns or represent an investment right.",
+          title: "BDF Mining Rights",
+          body: "BDF is not a token used simply by holding the NFT certificate — it is a shared utility token anyone in the ecosystem can use. Only NFT certificate holders are granted the right to mine BDF; this does not guarantee returns or represent an investment right.",
         },
       ],
     },
@@ -577,40 +409,40 @@ export const TOKEN: SitePage = {
     },
     {
       eyebrow: "UTILITY TOKEN",
-      title: "BDL Token Economy",
-      body: "BDL is a shared utility token used within the Block Label ecosystem, usable by anyone regardless of NFT certificate ownership. However, NFT certificate holders are additionally granted the right to mine BDL. It does not promise returns or represent securities rights.",
+      title: "BDF Token Economy",
+      body: "BDF is a shared utility token used within the Block Label ecosystem, usable by anyone regardless of NFT certificate ownership. However, NFT certificate holders are additionally granted the right to mine BDF. It does not promise returns or represent securities rights.",
     },
     {
-      title: "BDL Token Overview",
-      body: "BDL Token is the core utility & governance token of the Block Label ecosystem.",
+      title: "BDF Token Overview",
+      body: "BDF Token is the core utility & governance token of the Block Label ecosystem.",
     },
     {
       title: "Corporate Structure & Token Classification Notice",
-      body: "Block DAO Foundation (the 'Foundation'), the issuer of the BDL token, is a non-profit foundation located overseas, and is a completely separate and independent legal entity from Block Label Co., Ltd. (the Korean corporation). The two organizations operate the IP content business and the token economy business independently, with no debt or liability relationship between them.\n\nAll blockchain-related businesses, including BDL token issuance, token economy operations, and DAO governance, are managed and operated by the Foundation. The BDL token information provided on this website is for reference purposes only regarding the Foundation's project.\n\nThe BDL token is a utility token intended solely for purchasing NFT products and gift certificates (including gift cards) offered by the Foundation. Under no circumstances does this token possess the characteristics of currency, legal tender, electronic money, payment instruments, deposits, bonds, securities, investment contracts, derivatives, or any equivalent financial instruments. Mere holding of the token does not guarantee interest, dividends, principal protection, or investment returns. Therefore, trading or exchanging this token shall not be considered an investment activity, and it is not classified as a security under applicable laws.",
+      body: "Block DAO Foundation (the 'Foundation'), the issuer of the BDF token, is a non-profit foundation located overseas, and is a completely separate and independent legal entity from Block Label Co., Ltd. (the Korean corporation). The two organizations operate the IP content business and the token economy business independently, with no debt or liability relationship between them.\n\nAll blockchain-related businesses, including BDF token issuance, token economy operations, and DAO governance, are managed and operated by the Foundation. The BDF token information provided on this website is for reference purposes only regarding the Foundation's project.\n\nThe BDF token is a utility token intended solely for purchasing NFT products and gift certificates (including gift cards) offered by the Foundation. Under no circumstances does this token possess the characteristics of currency, legal tender, electronic money, payment instruments, deposits, bonds, securities, investment contracts, derivatives, or any equivalent financial instruments. Mere holding of the token does not guarantee interest, dividends, principal protection, or investment returns. Therefore, trading or exchanging this token shall not be considered an investment activity, and it is not classified as a security under applicable laws.",
     },
     {
       title: "Frequently Asked Questions (FAQ)",
-      body: "Guidance on the legal nature of the BDL token.",
+      body: "Guidance on the legal nature of the BDF token.",
       faq: [
         {
-          question: "Q1. Is the BDL token a currency?",
+          question: "Q1. Is the BDF token a currency?",
           answer:
-            "No. The BDL token is not legal tender, electronic money, or a payment instrument. For example, unlike KRW or USD, it cannot be used to pay for everyday goods or services. It is a limited utility token usable only for purchasing NFT products and gift certificates offered by the Foundation.",
+            "No. The BDF token is not legal tender, electronic money, or a payment instrument. For example, unlike KRW or USD, it cannot be used to pay for everyday goods or services. It is a limited utility token usable only for purchasing NFT products and gift certificates offered by the Foundation.",
         },
         {
-          question: "Q2. Is the BDL token a security?",
+          question: "Q2. Is the BDF token a security?",
           answer:
-            "No. The BDL token does not qualify as a security, investment contract, or derivative under capital markets law. For example, unlike a stock, mere holding of the token does not grant equity, voting rights as a shareholder, dividends, interest, principal protection, or any promise of future returns. Holding the token does not guarantee any investment returns.",
+            "No. The BDF token does not qualify as a security, investment contract, or derivative under capital markets law. For example, unlike a stock, mere holding of the token does not grant equity, voting rights as a shareholder, dividends, interest, principal protection, or any promise of future returns. Holding the token does not guarantee any investment returns.",
         },
         {
-          question: "Q3. Then what is the BDL token?",
+          question: "Q3. Then what is the BDF token?",
           answer:
-            "The BDL token is a utility token used solely within the Foundation's ecosystem. Examples: (1) purchasing Block Label IP-based NFT products (artist-limited NFTs, content NFTs, etc.), (2) purchasing gift certificates / gift cards issued by the Foundation, and (3) participating in DAO governance voting.",
+            "The BDF token is a utility token used solely within the Foundation's ecosystem. Examples: (1) purchasing Block Label IP-based NFT products (artist-limited NFTs, content NFTs, etc.), (2) purchasing gift certificates / gift cards issued by the Foundation, and (3) participating in DAO governance voting.",
         },
         {
           question: "Q4. Does buying or selling the token constitute investment activity?",
           answer:
-            "No. The trading or exchange of BDL tokens is not regarded as investment activity, and is not classified as a securities transaction under applicable laws. The Foundation cannot control, predict, or guarantee market price fluctuations, and the user bears full responsibility for all transactions.",
+            "No. The trading or exchange of BDF tokens is not regarded as investment activity, and is not classified as a securities transaction under applicable laws. The Foundation cannot control, predict, or guarantee market price fluctuations, and the user bears full responsibility for all transactions.",
         },
         {
           question: "Q5. Are Block Label Co., Ltd. and the Foundation the same company?",
@@ -751,7 +583,7 @@ export const NOTICE_POSTS: NoticePost[] = [
     date: "Posted: Apr 1, 2026",
     paragraphs: [
       "Hello, this is Block Label.",
-      "We are pleased to announce that the official Block Label website has been newly launched. On this site you can find information about the company, business areas, technology, content, BDL Token, and careers.",
+      "We are pleased to announce that the official Block Label website has been newly launched. On this site you can find information about the company, business areas, technology, content, BDF Token, and careers.",
       "Block Label's news and project updates will be promptly shared through the [Company News] and [Notices] boards on this website.",
       "Thank you for your continued interest and support.",
     ],

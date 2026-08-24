@@ -256,7 +256,7 @@ export function ContentFormPage({ page }: { page: FormPage }) {
               ) : f.type === "textarea" ? (
                 <textarea
                   rows={4}
-                  placeholder={f.placeholder}
+                  placeholder={f.placeholder ? t(f.placeholder) : undefined}
                   value={values[f.label] || ""}
                   onChange={(e) => set(f.label, e.target.value)}
                   className="mt-1 w-full px-3 py-2 rounded-md bg-input border border-border text-sm"
@@ -264,7 +264,7 @@ export function ContentFormPage({ page }: { page: FormPage }) {
               ) : (
                 <input
                   type={f.type || "text"}
-                  placeholder={f.placeholder}
+                  placeholder={f.placeholder ? t(f.placeholder) : undefined}
                   value={values[f.label] || ""}
                   onChange={(e) => set(f.label, e.target.value)}
                   className="mt-1 w-full px-3 py-2 rounded-md bg-input border border-border text-sm"

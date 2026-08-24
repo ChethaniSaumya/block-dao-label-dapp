@@ -12,9 +12,10 @@ import { toast } from "sonner";
 const links = [
   { to: "/", label: "Home" },
   { to: "/dashboard", label: "Dashboard" },
+  { to: "/business", label: "Foundation" },
+  { to: "/roadmap", label: "Roadmap" },
   { to: "/airdrop", label: "Airdrop" },
   { to: "/certificates", label: "Certificates" },
-  { to: "/referral", label: "Referral" },
   { to: "/about", label: "About" },
 ] as const;
 
